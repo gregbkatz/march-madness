@@ -1,0 +1,82 @@
+pwin: 0.0
+max_score: 207.0
+median: 43.0
+max_bonus: 121.0
+max_no_bonus: 86.0
+min_bonus: 0.0
+min_no_bonus: 7.0
+mean_finish: 722.659
+median_finish: 800.0
+top20: 0.05
+top10: 0.024
+top5: 0.016
+top2: 0.009
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  9.0 West     Vanderbilt  
+ 12.0 West     Princeton   
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+  5.0 East     Virginia    
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+ 14.0 Midwest  Iona        
+ 10.0 Midwest  Oklahoma Sta
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+ 16.0 South    Texas Southe
+  5.0 South    Minnesota   
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+ 16.0 West     South Dakota
+ 12.0 West     Princeton   
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+ 13.0 East     East Tenness
+ 14.0 East     New Mexico S
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+ 16.0 South    Texas Southe
+ 14.0 South    Kent State  
+ 12.0 West     Princeton   
+  7.0 West     Saint Mary's
+ 13.0 East     East Tenness
+ 14.0 East     New Mexico S
+ 13.0 Midwest  Vermont     
+ 15.0 Midwest  Jacksonville
+----- Round 4 -----
+ 14.0 South    Kent State  
+  7.0 West     Saint Mary's
+ 14.0 East     New Mexico S
+ 15.0 Midwest  Jacksonville
+----- Round 5 -----
+  7.0 West     Saint Mary's
+ 15.0 Midwest  Jacksonville
+----- Round 6 -----
+  7.0 West     Saint Mary's

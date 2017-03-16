@@ -1,0 +1,82 @@
+pwin: 0.003
+max_score: 224.0
+median: 82.0
+max_bonus: 108.0
+max_no_bonus: 126.0
+min_bonus: 0.0
+min_no_bonus: 16.0
+mean_finish: 290.692
+median_finish: 228.5
+top20: 0.462
+top10: 0.276
+top5: 0.146
+top2: 0.071
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+ 12.0 West     Princeton   
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  8.0 East     Wisconsin   
+ 12.0 East     North Caroli
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+ 14.0 Midwest  Iona        
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  9.0 South    Seton Hall  
+  4.0 South    Butler      
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  4.0 West     West Virgini
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  8.0 East     Wisconsin   
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+  2.0 East     Duke        
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+ 11.0 Midwest  Rhode Island
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  4.0 South    Butler      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  7.0 West     Saint Mary's
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 12.0 Midwest  Nevada      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  4.0 South    Butler      
+  1.0 West     Gonzaga     
+  6.0 East     Southern Met
+  2.0 Midwest  Louisville  
+----- Round 5 -----
+  4.0 South    Butler      
+  2.0 Midwest  Louisville  
+----- Round 6 -----
+  4.0 South    Butler      

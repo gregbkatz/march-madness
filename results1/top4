@@ -1,0 +1,82 @@
+pwin: 0.014
+max_score: 198.0
+median: 86.0
+max_bonus: 124.0
+max_no_bonus: 134.0
+min_bonus: 1.0
+min_no_bonus: 16.0
+mean_finish: 269.166
+median_finish: 197.0
+top20: 0.505
+top10: 0.363
+top5: 0.24
+top2: 0.135
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+ 13.0 Midwest  Vermont     
+ 11.0 Midwest  Rhode Island
+ 14.0 Midwest  Iona        
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  8.0 South    Arkansas    
+  4.0 South    Butler      
+ 14.0 South    Kent State  
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+  6.0 West     Maryland    
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 10.0 East     Marquette   
+ 16.0 Midwest  North Caroli
+ 13.0 Midwest  Vermont     
+ 11.0 Midwest  Rhode Island
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  4.0 South    Butler      
+  2.0 South    Kentucky    
+  5.0 West     Notre Dame  
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+ 10.0 East     Marquette   
+ 16.0 Midwest  North Caroli
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  2.0 South    Kentucky    
+  5.0 West     Notre Dame  
+  1.0 East     Villanova   
+  2.0 Midwest  Louisville  
+----- Round 5 -----
+  2.0 South    Kentucky    
+  1.0 East     Villanova   
+----- Round 6 -----
+  2.0 South    Kentucky    

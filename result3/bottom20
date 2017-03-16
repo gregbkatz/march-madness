@@ -1,0 +1,76 @@
+median: 42.0
+mean_finish: 0.7393358
+median_finish: 0.8131
+top20: 0.044
+top10: 0.019
+top5: 0.005
+top2: 0.001
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+ 15.0 South    Northern Ken
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+ 16.0 South    Texas Southe
+  5.0 South    Minnesota   
+ 11.0 South    Kansas State
+  7.0 South    Dayton      
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+ 14.0 West     Florida Gulf
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  4.0 East     Florida     
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+  9.0 Midwest  Michigan Sta
+ 13.0 Midwest  Vermont     
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+----- Round 3 -----
+ 16.0 South    Texas Southe
+ 11.0 South    Kansas State
+  9.0 West     Vanderbilt  
+ 14.0 West     Florida Gulf
+ 16.0 East     Mount St. Ma
+ 14.0 East     New Mexico S
+  9.0 Midwest  Michigan Sta
+  3.0 Midwest  Oregon      
+----- Round 4 -----
+ 11.0 South    Kansas State
+  9.0 West     Vanderbilt  
+ 14.0 East     New Mexico S
+  9.0 Midwest  Michigan Sta
+----- Round 5 -----
+ 11.0 South    Kansas State
+  9.0 Midwest  Michigan Sta
+----- Round 6 -----
+  9.0 Midwest  Michigan Sta

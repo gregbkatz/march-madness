@@ -1,0 +1,76 @@
+median: 39.0
+mean_finish: 0.7885952
+median_finish: 0.8418
+top20: 0.01
+top10: 0.004
+top5: 0.002
+top2: 0.0
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+ 15.0 South    Northern Ken
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+  2.0 West     Arizona     
+ 16.0 East     Mount St. Ma
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+ 16.0 South    Texas Southe
+  5.0 South    Minnesota   
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+  1.0 West     Gonzaga     
+  4.0 West     West Virgini
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+ 16.0 East     Mount St. Ma
+  4.0 East     Florida     
+ 14.0 East     New Mexico S
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+ 12.0 Midwest  Nevada      
+  3.0 Midwest  Oregon      
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+ 16.0 South    Texas Southe
+ 14.0 South    Kent State  
+  4.0 West     West Virgini
+ 14.0 West     Florida Gulf
+ 16.0 East     Mount St. Ma
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+ 15.0 Midwest  Jacksonville
+----- Round 4 -----
+ 16.0 South    Texas Southe
+ 14.0 West     Florida Gulf
+ 15.0 East     Troy        
+ 15.0 Midwest  Jacksonville
+----- Round 5 -----
+ 14.0 West     Florida Gulf
+ 15.0 East     Troy        
+----- Round 6 -----
+ 14.0 West     Florida Gulf

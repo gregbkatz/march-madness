@@ -1,0 +1,82 @@
+pwin: 0.005
+max_score: 223.0
+median: 82.0
+max_bonus: 142.0
+max_no_bonus: 123.0
+min_bonus: 1.0
+min_no_bonus: 19.0
+mean_finish: 281.355
+median_finish: 216.0
+top20: 0.473
+top10: 0.287
+top5: 0.142
+top2: 0.063
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+ 12.0 West     Princeton   
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+ 13.0 Midwest  Vermont     
+ 11.0 Midwest  Rhode Island
+ 14.0 Midwest  Iona        
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  9.0 South    Seton Hall  
+  4.0 South    Butler      
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  9.0 West     Vanderbilt  
+  4.0 West     West Virgini
+ 14.0 West     Florida Gulf
+  2.0 West     Arizona     
+  9.0 East     Virginia Tec
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+ 12.0 Midwest  Nevada      
+ 11.0 Midwest  Rhode Island
+ 10.0 Midwest  Oklahoma Sta
+----- Round 3 -----
+  9.0 South    Seton Hall  
+  2.0 South    Kentucky    
+  4.0 West     West Virgini
+  2.0 West     Arizona     
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+  1.0 Midwest  Kansas      
+ 10.0 Midwest  Oklahoma Sta
+----- Round 4 -----
+  2.0 South    Kentucky    
+  2.0 West     Arizona     
+  6.0 East     Southern Met
+ 10.0 Midwest  Oklahoma Sta
+----- Round 5 -----
+  2.0 West     Arizona     
+ 10.0 Midwest  Oklahoma Sta
+----- Round 6 -----
+  2.0 West     Arizona     

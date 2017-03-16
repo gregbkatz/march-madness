@@ -1,0 +1,76 @@
+median: 100.0
+mean_finish: 0.393147
+median_finish: 0.345
+top20: 0.3241
+top10: 0.1654
+top5: 0.0806
+top2: 0.0304
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+ 11.0 West     Xavier      
+  2.0 West     Arizona     
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  6.0 East     Southern Met
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+ 12.0 Midwest  Nevada      
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  1.0 South    North Caroli
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  2.0 West     Arizona     
+  8.0 East     Wisconsin   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  3.0 Midwest  Oregon      
+----- Round 4 -----
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  2.0 East     Duke        
+  3.0 Midwest  Oregon      
+----- Round 5 -----
+  1.0 West     Gonzaga     
+  2.0 East     Duke        
+----- Round 6 -----
+  1.0 West     Gonzaga     

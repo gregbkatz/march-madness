@@ -1,0 +1,76 @@
+median: 64.0
+mean_finish: 0.741767
+median_finish: 0.81415
+top20: 0.04
+top10: 0.035
+top5: 0.015
+top2: 0.005
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  8.0 South    Arkansas    
+  4.0 South    Butler      
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  5.0 East     Virginia    
+  3.0 East     Baylor      
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  4.0 Midwest  Purdue      
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  8.0 South    Arkansas    
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+ 11.0 West     Xavier      
+  5.0 East     Virginia    
+  3.0 East     Baylor      
+  4.0 Midwest  Purdue      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  8.0 South    Arkansas    
+ 11.0 West     Xavier      
+  3.0 East     Baylor      
+  4.0 Midwest  Purdue      
+----- Round 5 -----
+ 11.0 West     Xavier      
+  3.0 East     Baylor      
+----- Round 6 -----
+  3.0 East     Baylor      

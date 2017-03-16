@@ -1,0 +1,76 @@
+median: 60.0
+mean_finish: 0.710204
+median_finish: 0.78
+top20: 0.0687
+top10: 0.0393
+top5: 0.0263
+top2: 0.0165
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+ 16.0 East     Mount St. Ma
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 South    North Caroli
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+  7.0 South    Dayton      
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+  3.0 West     Florida Stat
+  2.0 West     Arizona     
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  3.0 East     Baylor      
+  2.0 East     Duke        
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+  6.0 Midwest  Creighton   
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  4.0 South    Butler      
+  7.0 South    Dayton      
+  5.0 West     Notre Dame  
+  3.0 West     Florida Stat
+  8.0 East     Wisconsin   
+  3.0 East     Baylor      
+ 12.0 Midwest  Nevada      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  7.0 South    Dayton      
+  3.0 West     Florida Stat
+  8.0 East     Wisconsin   
+ 12.0 Midwest  Nevada      
+----- Round 5 -----
+  3.0 West     Florida Stat
+  8.0 East     Wisconsin   
+----- Round 6 -----
+  8.0 East     Wisconsin   

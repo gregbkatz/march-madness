@@ -1,0 +1,76 @@
+median: 36.0
+mean_finish: 0.7968376
+median_finish: 0.893
+top20: 0.036
+top10: 0.014
+top5: 0.012
+top2: 0.006
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+  6.0 South    Cincinnati  
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  9.0 East     Virginia Tec
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+ 14.0 Midwest  Iona        
+  7.0 Midwest  Michigan    
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+  8.0 South    Arkansas    
+ 13.0 South    Winthrop    
+ 14.0 South    Kent State  
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+  4.0 West     West Virgini
+ 14.0 West     Florida Gulf
+ 15.0 West     North Dakota
+  9.0 East     Virginia Tec
+  4.0 East     Florida     
+  3.0 East     Baylor      
+  7.0 East     South Caroli
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+  6.0 Midwest  Creighton   
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+  8.0 South    Arkansas    
+ 14.0 South    Kent State  
+ 16.0 West     South Dakota
+ 14.0 West     Florida Gulf
+  4.0 East     Florida     
+  7.0 East     South Caroli
+  8.0 Midwest  Miami (FL)  
+ 15.0 Midwest  Jacksonville
+----- Round 4 -----
+  8.0 South    Arkansas    
+ 14.0 West     Florida Gulf
+  4.0 East     Florida     
+  8.0 Midwest  Miami (FL)  
+----- Round 5 -----
+ 14.0 West     Florida Gulf
+  8.0 Midwest  Miami (FL)  
+----- Round 6 -----
+  8.0 Midwest  Miami (FL)  

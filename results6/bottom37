@@ -1,0 +1,76 @@
+median: 70.0
+mean_finish: 0.6602437
+median_finish: 0.7485
+top20: 0.112
+top10: 0.063
+top5: 0.038
+top2: 0.022
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+ 11.0 East     Providence  
+  3.0 East     Baylor      
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  9.0 West     Vanderbilt  
+  4.0 West     West Virgini
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  8.0 East     Wisconsin   
+  4.0 East     Florida     
+  3.0 East     Baylor      
+  7.0 East     South Caroli
+  1.0 Midwest  Kansas      
+  5.0 Midwest  Iowa State  
+  6.0 Midwest  Creighton   
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  8.0 South    Arkansas    
+  3.0 South    UCLA        
+  9.0 West     Vanderbilt  
+  3.0 West     Florida Stat
+  8.0 East     Wisconsin   
+  7.0 East     South Caroli
+  5.0 Midwest  Iowa State  
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  3.0 South    UCLA        
+  3.0 West     Florida Stat
+  8.0 East     Wisconsin   
+  5.0 Midwest  Iowa State  
+----- Round 5 -----
+  3.0 West     Florida Stat
+  5.0 Midwest  Iowa State  
+----- Round 6 -----
+  5.0 Midwest  Iowa State  

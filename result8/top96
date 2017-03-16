@@ -1,0 +1,76 @@
+median: 105.5
+mean_finish: 0.3293995
+median_finish: 0.25945
+top20: 0.385
+top10: 0.185
+top5: 0.045
+top2: 0.01
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+ 14.0 South    Kent State  
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+ 12.0 West     Princeton   
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+ 10.0 South    Wichita Stat
+  1.0 West     Gonzaga     
+  4.0 West     West Virgini
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  4.0 Midwest  Purdue      
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  1.0 South    North Caroli
+ 10.0 South    Wichita Stat
+  1.0 West     Gonzaga     
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  1.0 South    North Caroli
+  1.0 West     Gonzaga     
+  1.0 East     Villanova   
+  2.0 Midwest  Louisville  
+----- Round 5 -----
+  1.0 West     Gonzaga     
+  1.0 East     Villanova   
+----- Round 6 -----
+  1.0 East     Villanova   

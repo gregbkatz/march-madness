@@ -1,0 +1,76 @@
+median: 68.0
+mean_finish: 0.6969028333333332
+median_finish: 0.76955
+top20: 0.055
+top10: 0.025
+top5: 0.01
+top2: 0.005
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+ 14.0 Midwest  Iona        
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  7.0 South    Dayton      
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+  6.0 West     Maryland    
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  5.0 East     Virginia    
+ 11.0 East     Providence  
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  6.0 Midwest  Creighton   
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  1.0 South    North Caroli
+  6.0 South    Cincinnati  
+  1.0 West     Gonzaga     
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  2.0 East     Duke        
+  5.0 Midwest  Iowa State  
+  6.0 Midwest  Creighton   
+----- Round 4 -----
+  6.0 South    Cincinnati  
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  6.0 Midwest  Creighton   
+----- Round 5 -----
+  6.0 South    Cincinnati  
+  6.0 Midwest  Creighton   
+----- Round 6 -----
+  6.0 South    Cincinnati  

@@ -9,6 +9,7 @@ from scipy.stats import rankdata
 import numpy as np
 import urllib.request
 import copy
+import time
 
 def yahoo_order():
     #return [1,5,11,4,0,7,9,13,8,6,3,12,2,10]
@@ -406,7 +407,7 @@ def score_bracket(check, bracket, use_bonus):
    
     if use_bonus: 
         #bonus_multiplier = [1,1,2,2,3,3]
-        bonus_multiplier = [1,1,1,1,1,1]
+        bonus_multiplier = [1,2,3,4,5,6]
     else:
         bonus_multiplier = [0,0,0,0,0,0]
     score_by_round = []
@@ -429,7 +430,7 @@ def score_bracket(check, bracket, use_bonus):
     bonus = sum(bonus_by_round)
     total = score + bonus
 #    return (score, score_by_round, score_by_game, bonus, bonus_by_round, bonus_by_game, total)
-    return (total, score, bonus, bonus_by_round)            
+    return (total, score, bonus)            
 
 def pick_id_to_name_lines(pick_ids, forecast):
     i = 1
@@ -439,10 +440,14 @@ def pick_id_to_name_lines(pick_ids, forecast):
         out += '----- Round {} -----\n'.format(i)
         i += 1
         for team in rd:
-#           out = out + (team_summary(forecast.teams[team])) + '\n'
-            s.append(team_summary(forecast.teams[team]))
-#    return out
-    return s
+           out = out + (team_summary(forecast.teams[team])) + '\n'
+#            s.append(team_summary(forecast.teams[team]))
+    return out
+#    return s
+
+
+def compete_print_top_bottom(c, n):
+    print_top_bottom(c.mcc.medians, n, c.mcc, len(c.picks), c.mcc.ranks.shape[0], c.mcc.picks, c.mcc.forecast)
 
 
 class Compete:
@@ -452,7 +457,9 @@ class Compete:
         self.use_bonus = use_bonus
         if source == 'dir':
             for file in os.listdir(d):
-                if file.endswith(".picks"):
+                #if file.endswith(".picks"):
+                if file.startswith("top"):
+                    print(file)
                     picks.append(Picks(os.path.join(d, file), True))
                     names.append(file)
         elif source == 'yahoo':
@@ -593,11 +600,54 @@ def member_renames():
             "Nicholas Galano": "Nick"}     
 
 
+def print_top_bottom(grade, n, mcc, npicks, ncases, pick_brackets, forecast):
+    idx_sort = sorted(range(len(grade)), key=lambda k: grade[k])
+    idx_sort = idx_sort
+    for i in range(0,n):
+        j = idx_sort[-i-1]
+        write_bracket_to_file(j, 'top{}'.format(i+1), mcc, npicks, ncases, pick_brackets, forecast)
+        j = idx_sort[i]
+        write_bracket_to_file(j, 'bottom{}'.format(i+1), mcc, npicks, ncases, pick_brackets, forecast)
+
+def write_bracket_to_file(j, fname, mcc, npicks, ncases, pick_brackets, forecast):
+    with open(fname, 'wt') as f:
+        # f.write('pwin: {}\n'.format(self.mcc.pwin[j]))
+        # f.write('max_score: {}\n'.format(self.mcc.max_scores[j]))
+        f.write('median: {}\n'.format(mcc.medians[j]))
+        # f.write('max_bonus: {}\n'.format(self.mcc.max_bonus[j]))
+        # f.write('max_no_bonus: {}\n'.format(self.mcc.max_no_bonus[j]))
+        # f.write('min_bonus: {}\n'.format(self.mcc.min_bonus[j]))
+        # f.write('min_no_bonus: {}\n'.format(self.mcc.min_no_bonus[j]))
+        f.write('mean_finish: {}\n'.format(mcc.mean_finish[j]/npicks))
+        f.write('median_finish: {}\n'.format(mcc.median_finish[j]/npicks))
+
+        curr_ranks = mcc.ranks[:,j]
+        top20 = np.count_nonzero(curr_ranks <= npicks*20/100)/ncases
+        f.write('top20: {}\n'.format(top20))
+        top10 = np.count_nonzero(curr_ranks <= npicks*10/100)/ncases
+        f.write('top10: {}\n'.format(top10))
+        top5 = np.count_nonzero(curr_ranks <= npicks*5/100)/ncases
+        f.write('top5: {}\n'.format(top5))
+        top2 = np.count_nonzero(curr_ranks <= npicks*2/100)/ncases
+        f.write('top2: {}\n'.format(top2))
+
+        f.write(pick_id_to_name_lines(pick_brackets[j].pick_ids, forecast))
+
 class SearchPicks:
-    def __init__(self, f1, f2, ncases, npicks):
+    def __init__(self, f1, f2, ncases, npicks, old_method=False):
         self.forecast = Forecast(f1)
         self.pick_forecast = Forecast(f2)
         self.ncases = ncases
+        self.npicks = npicks
+
+
+        if old_method:
+            print('old method ZZZ')
+            self.old_method()
+        else:
+            print('new method')
+            self.new_method()
+
 #        brackets = []
 #        for i in range(0,ncases):
 #            brackets.append(resolve_bracket(self.forecast.first_games))
@@ -620,31 +670,66 @@ class SearchPicks:
 #        self.grade = medians
 #        self.print_top_bottom(1) 
 
+    def new_method(self):
+        self.pick_brackets = []
+        medians = []
+        print('Getting picks')
+        for i in range(0, self.npicks):
+            self.pick_brackets.append(RandomPicks(self.pick_forecast))
+     
+        print("Running MC")
+        self.mcc = MCcompete(self.pick_brackets, self.forecast, True)
+        self.mcc.run_MC(self.ncases)
+        self.grade = self.mcc.medians
+
+    def old_method(self):
         pick_brackets = []
         medians = []
-        for i in range(0,npicks):
+        last_time = time.time()
+        for i in range(0, self.npicks):
             pick_bracket = RandomPicks(self.pick_forecast)
-            mc = MC(pick_bracket, self.forecast)
-            mc.run_MC(ncases)
-            medians.append(median(mc.scores))
+            mc = MC(pick_bracket, self.forecast, True)
+            mc.run_MC(self.ncases)
+            medians.append(median(mc.scores[0]))
             pick_brackets.append(pick_bracket)
-            print(npicks - i)
+
+            curr_time = time.time()
+            dt = curr_time - last_time
+            last_time = curr_time
+            time_remaining = (self.npicks-i)*dt/60
+            print("{:4.0f}, {:4.02f} seconds elapsed, {:4.01f} minutes remaining".format(self.npicks-i, dt, time_remaining))
+
         self.grade = medians
         self.pick_brackets = pick_brackets
-        self.print_top_bottom(3) 
+        #self.print_top_bottom(3) 
 
-    def print_top_bottom(self, n):
+    def print_top_bottom_old(self, n):
         idx_sort = sorted(range(len(self.grade)), key=lambda k: self.grade[k])
         self.idx_sort = idx_sort
         for i in range(0,n):
-           with open('top{}'.format(i+1), 'wt') as f:
-                j = idx_sort[-i-1]
-                f.write('{}\n'.format(self.grade[j]))
-                f.write(pick_id_to_names(self.pick_brackets[j].pick_ids, self.forecast))
-           with open('bottom{}'.format(i+1), 'wt') as f:
-                j = idx_sort[i]
-                f.write('{}\n'.format(self.grade[j]))
-                f.write(pick_id_to_names(self.pick_brackets[j].pick_ids, self.forecast))
+            j = idx_sort[-i-1]
+            self.write_bracket_to_file_old(j, 'top{}'.format(i+1))
+            j = idx_sort[i]
+            self.write_bracket_to_file_old(j, 'bottom{}'.format(i+1))
+
+    def write_bracket_to_file_old(self, j, fname):
+        with open(fname, 'wt') as f:
+            f.write('median: {}\n'.format(self.grade[j]))
+            f.write(pick_id_to_name_lines(self.pick_brackets[j].pick_ids, self.forecast))
+
+    # def print_top_bottom_new(self, n):
+    #     idx_sort = sorted(range(len(self.mcc.pwin)), key=lambda k: self.mcc.pwin[k])
+    #     self.idx_sort = idx_sort
+    #     for i in range(0,n):
+    #        with open('top{}'.format(i+1), 'wt') as f:
+    #             j = idx_sort[-i-1]
+    #             f.write('{}\n'.format(self.mcc.pwin[j]))
+    #             f.write(pick_id_to_names(self.pick_brackets[j].pick_ids, self.forecast))
+    #        with open('bottom{}'.format(i+1), 'wt') as f:
+    #             j = idx_sort[i]
+    #             f.write('{}\n'.format(self.mcc.pwin[j]))
+    #             f.write(pick_id_to_names(self.pick_brackets[j].pick_ids, self.forecast))
+
 
     def correlate(self,  i_rd, i_game):
         ids = []
@@ -697,11 +782,11 @@ class MCcompete:
  
         j = 0
         for j in range(len(self.picks)):
-      #      if not hasattr(self.picks[j], 'pick_ids'):
+            if not hasattr(self.picks[j], 'pick_ids'):
                 self.picks[j].convert_picks_to_id(self.forecast.idmap, self.forecast.synonyms) 
 
-        for picks in self.picks:
-            check_picks(picks.picks)
+        #for picks in self.picks:
+        #    check_picks(picks.picks)
 
     def run_MC(self, ncases):
         brackets = []
@@ -711,7 +796,13 @@ class MCcompete:
         ranks = np.zeros((ncases, len(self.picks)))
         ranks2 = np.zeros((ncases, len(self.picks)))
         bracket_arrays = []
+        last_time = time.time()
         for i in range(0, ncases): # case
+            curr_time = time.time()
+            dt = curr_time - last_time
+            last_time = curr_time
+            time_remaining = (ncases-i)*dt/60
+            print("{:4.0f}, {:4.02f} seconds elapsed, {:4.01f} minutes remaining".format(ncases-i, dt, time_remaining))
             bracket = resolve_bracket(self.forecast.first_games)
             brackets.append(bracket)
             for j in range(0,len(bracket)): # round
@@ -727,41 +818,49 @@ class MCcompete:
             ranks[i,:]  = len(self.picks) + 1 - rankdata(scores[i,:], 'max')
             ranks2[i,:] = len(self.picks) + 1 - rankdata(scores[i,:], 'min')
 
+        print('Calcs')
         medians = np.median(scores, axis=0)
-        pmat = probability_matrix(ranks)
-        min_scores = np.min(scores, axis=0)
-        min_no_bonus = np.min(no_bonus, axis=0)
-        min_bonus = np.min(bonus, axis=0)
-        max_scores = np.max(scores, axis=0)
-        max_no_bonus = np.max(no_bonus, axis=0)
-        max_bonus = np.max(bonus, axis=0)
-        pwin = pmat[:,0]      
-        pmat2 = probability_matrix(ranks2)
-        plose = pmat2[:,-1]
-        best_finish = np.min(ranks, axis=0)
-        worst_finish = np.max(ranks2,axis=0)
-        curr_order = np.argsort(min_scores)
-        curr_order = curr_order[::-1]
+        # pmat = probability_matrix(ranks)
+        # min_scores = np.min(scores, axis=0)
+        # min_no_bonus = np.min(no_bonus, axis=0)
+        # min_bonus = np.min(bonus, axis=0)
+        # max_scores = np.max(scores, axis=0)
+        # max_no_bonus = np.max(no_bonus, axis=0)
+        # max_bonus = np.max(bonus, axis=0)
+        # pwin = pmat[:,0]      
+        # pmat2 = probability_matrix(ranks2)
+        # plose = pmat2[:,-1]
+        # best_finish = np.min(ranks, axis=0)
+        # worst_finish = np.max(ranks2,axis=0)
+        # curr_order = np.argsort(min_scores)
+        # curr_order = curr_order[::-1]
+        mean_finish = np.mean(ranks, axis=0)
+        median_finish = np.median(ranks, axis=0)
+        print('Calcs done')
 
       #  self.brackets = brackets
       #  self.bracket_arrays = bracket_arrays
       #  self.scores = scores 
       #  self.ranks = ranks 
-        self.ncases = ncases
+        # self.ncases = ncases
         self.medians = medians
-        self.pmat = pmat
-        self.min_scores = min_scores
-        self.min_no_bonus = min_no_bonus
-        self.min_bonus = min_bonus
-        self.max_scores = max_scores
-        self.max_no_bonus = max_no_bonus
-        self.max_bonus = max_bonus
-        self.pwin = pwin
-        self.pmat2 = pmat2
-        self.plose = plose
-        self.best_finish = best_finish
-        self.worst_finish = worst_finish
-        self.curr_order = curr_order
+        # self.pmat = pmat
+        # self.min_scores = min_scores
+        # self.min_no_bonus = min_no_bonus
+        # self.min_bonus = min_bonus
+        # self.max_scores = max_scores
+        # self.max_no_bonus = max_no_bonus
+        # self.max_bonus = max_bonus
+        # self.pwin = pwin
+        # self.pmat2 = pmat2
+        # self.plose = plose
+        # self.best_finish = best_finish
+        # self.worst_finish = worst_finish
+        # self.curr_order = curr_order
+        self.mean_finish = mean_finish
+        self.median_finish = median_finish
+        self.ranks = ranks
+        self.scores = scores
 
     def analyze_brackets(self):
         teams = self.forecast.teams
@@ -808,7 +907,7 @@ class MC:
         scores = []
         for i in range(0, ncases):
             bracket = resolve_bracket(self.forecast.first_games)
-            self.picks.pick_ids = perfect_picks(bracket)
+            #self.picks.pick_ids = perfect_picks(bracket)
             check = compare_picks_to_bracket(self.picks.pick_ids, bracket)
             score = score_bracket(check, bracket, self.use_bonus)
             brackets.append(bracket)
@@ -864,16 +963,19 @@ class Picks:
     def read_picks_alt(self,fname):
         picks = []
         i = -1
+        initialized = False
         with open(fname, 'r') as f:
-            f.readline() # skip first line
             for line in f:
-                if line[0] == '-':
-                    picks.append([])
-                    i += 1
-                else:
-                   # words = line.split()
-                   # picks[i].append(' '.join(words[1:]))
-                    picks[i].append(line.strip())
+                if not initialized and line[0] == '-':
+                    initialized = True
+                if initialized:
+                    if line[0] == '-':
+                        picks.append([])
+                        i += 1
+                    else:
+                        words = line.split()
+                        picks[i].append(' '.join(words[2:]))
+                       # picks[i].append(line.strip())
                        
         self.picks = picks 
  
@@ -1067,7 +1169,8 @@ class Forecast:
         
     
     def get_synonyms(self):
-        s = {'cal': 'california', 
+        s = {
+             'cal': 'california', 
              'wichita st.': 'wichita state',
              'miami': 'miami (fl)', 
              "saint joe's": "saint joseph's",
@@ -1092,7 +1195,7 @@ class Forecast:
              'stephen f. a': 'stephen f. austin',
              'arkansas-lit': 'arkansas-little rock',
              'southern cal': 'southern california',
-             'florida gulf': 'florida gulf coast',
+              'florida gulf': 'florida gulf coast',
              'n. c. wilmington': 'north carolina-wilmington',
              'fresno st.': 'fresno state',
              'n. carolina': 'north carolina',
@@ -1125,7 +1228,22 @@ class Forecast:
              "unc-ash.": "north carolina-asheville",
              "csu bakers.": "cal state bakersfield",
              "mid. tenn.": "middle tennessee",
-             "saint joseph": "saint joseph's"}
+             "saint joseph": "saint joseph's", 
+             "saint mary\\'s": "saint mary's (ca)",
+             "saint mary's": "saint mary's (ca)",
+             "southern met": "southern methodist",
+             "south caroli": "south carolina",
+             "new mexico s": "new mexico state",
+             "virginia tec": "virginia tech", 
+             "northern ken": "northern kentucky", 
+             "florida stat": "florida state",
+             "middle tenne": "middle tennessee",
+             "oklahoma sta": "oklahoma state",
+             "east tenness": "east tennessee state",
+             "jacksonville": "jacksonville state",
+             "texas southe": "texas southern",
+             "mount st. ma": "mount st. mary's"
+             }
 
  
         self.synonyms = s 

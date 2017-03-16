@@ -1,0 +1,82 @@
+pwin: 0.014
+max_score: 206.0
+median: 81.0
+max_bonus: 98.0
+max_no_bonus: 136.0
+min_bonus: 2.0
+min_no_bonus: 19.0
+mean_finish: 278.003
+median_finish: 234.5
+top20: 0.452
+top10: 0.266
+top5: 0.166
+top2: 0.092
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+ 12.0 South    Middle Tenne
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+ 13.0 South    Winthrop    
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+ 14.0 West     Florida Gulf
+  2.0 West     Arizona     
+  9.0 East     Virginia Tec
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 10.0 East     Marquette   
+  1.0 Midwest  Kansas      
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  1.0 South    North Caroli
+  3.0 South    UCLA        
+  5.0 West     Notre Dame  
+  2.0 West     Arizona     
+ 13.0 East     East Tenness
+ 10.0 East     Marquette   
+  1.0 Midwest  Kansas      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  3.0 South    UCLA        
+  5.0 West     Notre Dame  
+ 13.0 East     East Tenness
+  1.0 Midwest  Kansas      
+----- Round 5 -----
+  5.0 West     Notre Dame  
+  1.0 Midwest  Kansas      
+----- Round 6 -----
+  1.0 Midwest  Kansas      

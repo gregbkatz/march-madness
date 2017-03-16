@@ -1,0 +1,82 @@
+pwin: 0.021
+max_score: 265.0
+median: 81.0
+max_bonus: 122.0
+max_no_bonus: 143.0
+min_bonus: 1.0
+min_no_bonus: 15.0
+mean_finish: 312.331
+median_finish: 219.5
+top20: 0.479
+top10: 0.345
+top5: 0.229
+top2: 0.137
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  9.0 South    Seton Hall  
+ 12.0 South    Middle Tenne
+ 13.0 South    Winthrop    
+  6.0 South    Cincinnati  
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  3.0 West     Florida Stat
+ 10.0 West     Virginia Com
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+ 14.0 Midwest  Iona        
+ 10.0 Midwest  Oklahoma Sta
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+  9.0 South    Seton Hall  
+ 13.0 South    Winthrop    
+ 14.0 South    Kent State  
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  4.0 West     West Virgini
+  3.0 West     Florida Stat
+ 10.0 West     Virginia Com
+  1.0 East     Villanova   
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 15.0 East     Troy        
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+ 14.0 Midwest  Iona        
+ 10.0 Midwest  Oklahoma Sta
+----- Round 3 -----
+ 13.0 South    Winthrop    
+  2.0 South    Kentucky    
+  4.0 West     West Virgini
+ 10.0 West     Virginia Com
+  1.0 East     Villanova   
+ 15.0 East     Troy        
+  9.0 Midwest  Michigan Sta
+ 10.0 Midwest  Oklahoma Sta
+----- Round 4 -----
+  2.0 South    Kentucky    
+ 10.0 West     Virginia Com
+  1.0 East     Villanova   
+  9.0 Midwest  Michigan Sta
+----- Round 5 -----
+  2.0 South    Kentucky    
+  1.0 East     Villanova   
+----- Round 6 -----
+  1.0 East     Villanova   

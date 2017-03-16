@@ -1,0 +1,76 @@
+median: 62.0
+mean_finish: 0.7515569999999999
+median_finish: 0.8491166666666666
+top20: 0.05
+top10: 0.01
+top5: 0.005
+top2: 0.0
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+  6.0 West     Maryland    
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  4.0 East     Florida     
+ 11.0 East     Providence  
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  5.0 Midwest  Iowa State  
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+----- Round 3 -----
+  4.0 South    Butler      
+  2.0 South    Kentucky    
+  5.0 West     Notre Dame  
+  2.0 West     Arizona     
+  4.0 East     Florida     
+ 11.0 East     Providence  
+  5.0 Midwest  Iowa State  
+  7.0 Midwest  Michigan    
+----- Round 4 -----
+  4.0 South    Butler      
+  5.0 West     Notre Dame  
+ 11.0 East     Providence  
+  7.0 Midwest  Michigan    
+----- Round 5 -----
+  5.0 West     Notre Dame  
+ 11.0 East     Providence  
+----- Round 6 -----
+ 11.0 East     Providence  

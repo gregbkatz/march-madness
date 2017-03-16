@@ -1,0 +1,76 @@
+median: 42.0
+mean_finish: 0.7528916
+median_finish: 0.8179
+top20: 0.025
+top10: 0.007
+top5: 0.002
+top2: 0.0
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+  6.0 South    Cincinnati  
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+ 13.0 West     Bucknell    
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+ 14.0 Midwest  Iona        
+  7.0 Midwest  Michigan    
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+  9.0 South    Seton Hall  
+ 13.0 South    Winthrop    
+ 14.0 South    Kent State  
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  5.0 West     Notre Dame  
+ 14.0 West     Florida Gulf
+  2.0 West     Arizona     
+  9.0 East     Virginia Tec
+  4.0 East     Florida     
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+ 16.0 Midwest  North Caroli
+ 13.0 Midwest  Vermont     
+ 14.0 Midwest  Iona        
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+ 13.0 South    Winthrop    
+  2.0 South    Kentucky    
+  5.0 West     Notre Dame  
+ 14.0 West     Florida Gulf
+  9.0 East     Virginia Tec
+ 14.0 East     New Mexico S
+ 16.0 Midwest  North Caroli
+ 15.0 Midwest  Jacksonville
+----- Round 4 -----
+ 13.0 South    Winthrop    
+  5.0 West     Notre Dame  
+ 14.0 East     New Mexico S
+ 16.0 Midwest  North Caroli
+----- Round 5 -----
+  5.0 West     Notre Dame  
+ 14.0 East     New Mexico S
+----- Round 6 -----
+ 14.0 East     New Mexico S
