@@ -407,7 +407,7 @@ def score_bracket(check, bracket, use_bonus):
    
     if use_bonus: 
         #bonus_multiplier = [1,1,2,2,3,3]
-        bonus_multiplier = [1,2,3,4,5,6]
+        bonus_multiplier = [1,1,3,4,5,6]
     else:
         bonus_multiplier = [0,0,0,0,0,0]
     score_by_round = []
@@ -429,7 +429,7 @@ def score_bracket(check, bracket, use_bonus):
     score = sum(score_by_round)
     bonus = sum(bonus_by_round)
     total = score + bonus
-#    return (score, score_by_round, score_by_game, bonus, bonus_by_round, bonus_by_game, total)
+ #   return (score, score_by_round, score_by_game, bonus, bonus_by_round, bonus_by_game, total)
     return (total, score, bonus)            
 
 def pick_id_to_name_lines(pick_ids, forecast):
@@ -457,8 +457,8 @@ class Compete:
         self.use_bonus = use_bonus
         if source == 'dir':
             for file in os.listdir(d):
-                #if file.endswith(".picks"):
-                if file.startswith("top"):
+                if file.endswith(".picks"):
+                #if file.startswith("top"):
                     print(file)
                     picks.append(Picks(os.path.join(d, file), True))
                     names.append(file)
@@ -499,12 +499,12 @@ class Compete:
         print(self.forecast.forecast_file)
         print(self.forecast.truth_file)
         print(self.mcc.ncases)
-        print('{:30}{:10}{:10}{:10}{:10}{:10}{:10}'.format('Bracket Name', 'min score', 'max score', 'P lose', 'P win', 'min rank', 'max rank'))
+        print('{:30},{:10},{:10},{:10},{:10},{:10},{:10}'.format('Bracket Name', 'min score', 'max score', 'P lose', 'P win', 'min rank', 'max rank'))
       #  self.mcc.curr_order = [7,13,10,2,9,5,12,4,1,11,8,12,3,0,6]
       #  self.mcc.curr_order = range(0,14)]
       #  for i in self.mcc.curr_order:
         for i in range(0,len(self.names)):
-            print('{:30}{:10.0f}{:10.0f}{:10.1f}{:10.1f}{:10.0f}{:10.0f}'.format(self.names[i], self.mcc.min_scores[i], self.mcc.max_scores[i], self.mcc.plose[i]*100, self.mcc.pwin[i]*100, self.mcc.worst_finish[i], self.mcc.best_finish[i]))
+            print('{:30},{:10.0f},{:10.0f},{:10.1f},{:10.1f},{:10.0f},{:10.0f}'.format(self.names[i], self.mcc.min_scores[i], self.mcc.max_scores[i], self.mcc.plose[i]*100, self.mcc.pwin[i]*100, self.mcc.worst_finish[i], self.mcc.best_finish[i]))
 
      
 def write_pmat(pmat, names, fname):
@@ -521,16 +521,21 @@ def write_pmat(pmat, names, fname):
 
 
 def yahoo_sort_teams(teams):
-    South = yahoo_html_region(teams[0:])
-    West = yahoo_html_region(teams[14:])
-    East  = yahoo_html_region(teams[35:])
-    Midwest = yahoo_html_region(teams[49:])
+    # South = yahoo_html_region(teams[0:])
+    # West = yahoo_html_region(teams[14:])
+    # East  = yahoo_html_region(teams[35:])
+    # Midwest = yahoo_html_region(teams[49:])
+    East = yahoo_html_region(teams[0:])
+    Midwest = yahoo_html_region(teams[14:])
+    West  = yahoo_html_region(teams[28:])
+    South = yahoo_html_region(teams[42:])
+
     x = []
     for i in range(len(South)):
-        x.append(South[i] + West[i] + East[i] + Midwest[i])
-    x.append(teams[28:32])
-    x.append(teams[32:34])
-    x.append(teams[34:35])
+        x.append(East[i] + Midwest[i] + West[i] + South[i])
+    x.append(teams[56:60]) # Final Four
+    x.append(teams[60:62]) # Finals
+    x.append(teams[62:63]) # Champion
     return x
 
 def yahoo_parse_line(line):
@@ -679,7 +684,7 @@ class SearchPicks:
      
         print("Running MC")
         self.mcc = MCcompete(self.pick_brackets, self.forecast, True)
-        self.mcc.run_MC(self.ncases)
+        self.mcc.run_MC(self.ncases, verbose=True)
         self.grade = self.mcc.medians
 
     def old_method(self):
@@ -788,7 +793,7 @@ class MCcompete:
         #for picks in self.picks:
         #    check_picks(picks.picks)
 
-    def run_MC(self, ncases):
+    def run_MC(self, ncases, verbose=True):
         brackets = []
         scores = np.zeros((ncases, len(self.picks)))
         no_bonus = np.zeros((ncases, len(self.picks)))
@@ -797,12 +802,14 @@ class MCcompete:
         ranks2 = np.zeros((ncases, len(self.picks)))
         bracket_arrays = []
         last_time = time.time()
+        print('Start simulations')
         for i in range(0, ncases): # case
             curr_time = time.time()
             dt = curr_time - last_time
             last_time = curr_time
             time_remaining = (ncases-i)*dt/60
-            print("{:4.0f}, {:4.02f} seconds elapsed, {:4.01f} minutes remaining".format(ncases-i, dt, time_remaining))
+            if verbose and i%1000 == 0:
+                print("{:4.0f}, {:4.02f} seconds elapsed, {:4.01f} minutes remaining".format(ncases-i, dt, time_remaining))
             bracket = resolve_bracket(self.forecast.first_games)
             brackets.append(bracket)
             for j in range(0,len(bracket)): # round
@@ -818,49 +825,49 @@ class MCcompete:
             ranks[i,:]  = len(self.picks) + 1 - rankdata(scores[i,:], 'max')
             ranks2[i,:] = len(self.picks) + 1 - rankdata(scores[i,:], 'min')
 
-        print('Calcs')
+        print('Start Calcs')
         medians = np.median(scores, axis=0)
-        # pmat = probability_matrix(ranks)
-        # min_scores = np.min(scores, axis=0)
-        # min_no_bonus = np.min(no_bonus, axis=0)
-        # min_bonus = np.min(bonus, axis=0)
-        # max_scores = np.max(scores, axis=0)
-        # max_no_bonus = np.max(no_bonus, axis=0)
-        # max_bonus = np.max(bonus, axis=0)
-        # pwin = pmat[:,0]      
-        # pmat2 = probability_matrix(ranks2)
-        # plose = pmat2[:,-1]
-        # best_finish = np.min(ranks, axis=0)
-        # worst_finish = np.max(ranks2,axis=0)
-        # curr_order = np.argsort(min_scores)
-        # curr_order = curr_order[::-1]
+        pmat = probability_matrix(ranks)
+        min_scores = np.min(scores, axis=0)
+        min_no_bonus = np.min(no_bonus, axis=0)
+        min_bonus = np.min(bonus, axis=0)
+        max_scores = np.max(scores, axis=0)
+        max_no_bonus = np.max(no_bonus, axis=0)
+        max_bonus = np.max(bonus, axis=0)
+        pwin = pmat[:,0]      
+        pmat2 = probability_matrix(ranks2)
+        plose = pmat2[:,-1]
+        best_finish = np.min(ranks, axis=0)
+        worst_finish = np.max(ranks2,axis=0)
+        curr_order = np.argsort(min_scores)
+        curr_order = curr_order[::-1]
         mean_finish = np.mean(ranks, axis=0)
         median_finish = np.median(ranks, axis=0)
-        print('Calcs done')
-
-      #  self.brackets = brackets
-      #  self.bracket_arrays = bracket_arrays
-      #  self.scores = scores 
-      #  self.ranks = ranks 
-        # self.ncases = ncases
+        print('Finish Calcs')
+        self.brackets = brackets
+        self.bracket_arrays = bracket_arrays
+        self.scores = scores 
+        self.no_bonus = no_bonus
+        self.bonus = bonus
+        self.ranks = ranks 
+        self.ncases = ncases
         self.medians = medians
-        # self.pmat = pmat
-        # self.min_scores = min_scores
-        # self.min_no_bonus = min_no_bonus
-        # self.min_bonus = min_bonus
-        # self.max_scores = max_scores
-        # self.max_no_bonus = max_no_bonus
-        # self.max_bonus = max_bonus
-        # self.pwin = pwin
-        # self.pmat2 = pmat2
-        # self.plose = plose
-        # self.best_finish = best_finish
-        # self.worst_finish = worst_finish
-        # self.curr_order = curr_order
+        self.pmat = pmat
+        self.min_scores = min_scores
+        self.min_no_bonus = min_no_bonus
+        self.min_bonus = min_bonus
+        self.max_scores = max_scores
+        self.max_no_bonus = max_no_bonus
+        self.max_bonus = max_bonus
+        self.pwin = pwin
+        self.pmat2 = pmat2
+        self.plose = plose
+        self.best_finish = best_finish
+        self.worst_finish = worst_finish
+        self.curr_order = curr_order
         self.mean_finish = mean_finish
         self.median_finish = median_finish
-        self.ranks = ranks
-        self.scores = scores
+  
 
     def analyze_brackets(self):
         teams = self.forecast.teams
@@ -974,8 +981,8 @@ class Picks:
                         i += 1
                     else:
                         words = line.split()
-                        picks[i].append(' '.join(words[2:]))
-                       # picks[i].append(line.strip())
+                        #picks[i].append(' '.join(words[2:]))
+                        picks[i].append(line.strip())
                        
         self.picks = picks 
  
@@ -1025,6 +1032,7 @@ class Forecast:
         self.get_synonyms()
         self.read_forecast(fname)
         self.make_name_to_id_lookup()
+        self.truth_file = truth_file
         if truth_file:
             self.add_truth(truth_file)
         self.hardcode_first_round() 
@@ -1036,7 +1044,6 @@ class Forecast:
 #        self.bracket = resolve_bracket(self.first_games)
 
     def add_truth(self, truth_file):
-        self.truth_file = truth_file
         truth_list = []
         with open(truth_file, 'r') as f:
             reader = csv.reader(f, delimiter=',')
@@ -1050,6 +1057,8 @@ class Forecast:
                     curr_id = name_to_id(row[0], self.idmap, self.synonyms)
                     if curr_id:
                         self.teams[curr_id]['final_round'] = int(row[1])
+                    else:
+                        print('WTF')
         self.truth_list = truth_list
 
     def write_first_round_to_file(self, fname='first_round.csv'):
@@ -1069,7 +1078,7 @@ class Forecast:
         South = sort_region(mpp[16:24])
         West = sort_region(mpp[24:32])
          
-        self.first_games = South + West + East + Midwest     
+        self.first_games = East + Midwest + West + South
 
 
     def hardcode_first_round(self):
@@ -1085,12 +1094,12 @@ class Forecast:
 # 2306,Kansas State,83.08,South,11a
 # 154,Wake Forest,82.96,South,11b
 
-        self.teams.pop(302)  # UC-Davis
+        self.teams.pop(2428)  # North Carolina Central
         self.teams.pop(2443)  # New Orleans
-        self.teams.pop(30)  # Souther California
+        self.teams.pop(2507)  # Providence
         self.teams.pop(154) # Wake Forest
         for team in self.teams:
-            if team == 2428 or team == 116 or team == 2507 or team == 2306:
+            if team == 302 or team == 116 or team == 30 or team == 2306:
                 self.teams[team]['team_seed'] = float(self.teams[team]['team_seed'][0:2])
                 self.teams[team]['playin_flag'] = 0
 
@@ -1242,7 +1251,16 @@ class Forecast:
              "east tenness": "east tennessee state",
              "jacksonville": "jacksonville state",
              "texas southe": "texas southern",
-             "mount st. ma": "mount st. mary's"
+             "mount st. ma": "mount st. mary's",
+             "florida st.": "florida state",
+             "smu": "southern methodist",
+             "middle tenn. st.": "middle tennessee",
+             "fla gulf coast": "florida gulf coast",
+             "e. tennessee st.": "east tennessee state",
+             "kansas st.": "kansas state",
+             "n. mex. st.": "new mexico state",
+             "st. mary\\'s": "saint mary's (ca)",
+             "oklahoma st.": "oklahoma state"
              }
 
  
