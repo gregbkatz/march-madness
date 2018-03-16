@@ -1,0 +1,76 @@
+median: 38.0
+mean_finish: 0.7799488
+median_finish: 0.86105
+top20: 0.012
+top10: 0.008
+top5: 0.002
+top2: 0.0
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+ 10.0 West     Virginia Com
+  2.0 West     Arizona     
+ 16.0 East     Mount St. Ma
+  9.0 East     Virginia Tec
+  5.0 East     Virginia    
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+ 14.0 Midwest  Iona        
+  7.0 Midwest  Michigan    
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+ 16.0 South    Texas Southe
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+ 10.0 West     Virginia Com
+ 16.0 East     Mount St. Ma
+ 13.0 East     East Tenness
+ 14.0 East     New Mexico S
+ 15.0 East     Troy        
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+  6.0 Midwest  Creighton   
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+ 16.0 South    Texas Southe
+ 11.0 South    Kansas State
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+ 16.0 East     Mount St. Ma
+ 15.0 East     Troy        
+  9.0 Midwest  Michigan Sta
+ 15.0 Midwest  Jacksonville
+----- Round 4 -----
+ 11.0 South    Kansas State
+  6.0 West     Maryland    
+ 16.0 East     Mount St. Ma
+ 15.0 Midwest  Jacksonville
+----- Round 5 -----
+  6.0 West     Maryland    
+ 16.0 East     Mount St. Ma
+----- Round 6 -----
+  6.0 West     Maryland    

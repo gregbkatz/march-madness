@@ -1,0 +1,76 @@
+median: 69.0
+mean_finish: 0.6658496
+median_finish: 0.7651
+top20: 0.1165
+top10: 0.051
+top5: 0.018
+top2: 0.007
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+ 12.0 West     Princeton   
+ 13.0 West     Bucknell    
+ 11.0 West     Xavier      
+  3.0 West     Florida Stat
+ 10.0 West     Virginia Com
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  5.0 South    Minnesota   
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  9.0 West     Vanderbilt  
+ 12.0 West     Princeton   
+ 11.0 West     Xavier      
+  2.0 West     Arizona     
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+  3.0 East     Baylor      
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  5.0 South    Minnesota   
+  3.0 South    UCLA        
+ 12.0 West     Princeton   
+  2.0 West     Arizona     
+  9.0 East     Virginia Tec
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  3.0 South    UCLA        
+  2.0 West     Arizona     
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+----- Round 5 -----
+  3.0 South    UCLA        
+  2.0 East     Duke        
+----- Round 6 -----
+  2.0 East     Duke        

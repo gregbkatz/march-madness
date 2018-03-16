@@ -1,0 +1,76 @@
+median: 67.5
+mean_finish: 0.6691858333333334
+median_finish: 0.7901
+top20: 0.115
+top10: 0.04
+top5: 0.02
+top2: 0.005
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  8.0 Midwest  Miami (FL)  
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  8.0 East     Wisconsin   
+  4.0 East     Florida     
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  1.0 Midwest  Kansas      
+  5.0 Midwest  Iowa State  
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+----- Round 3 -----
+  1.0 South    North Caroli
+  2.0 South    Kentucky    
+  9.0 West     Vanderbilt  
+  7.0 West     Saint Mary's
+  8.0 East     Wisconsin   
+ 10.0 East     Marquette   
+  1.0 Midwest  Kansas      
+ 10.0 Midwest  Oklahoma Sta
+----- Round 4 -----
+  1.0 South    North Caroli
+  7.0 West     Saint Mary's
+ 10.0 East     Marquette   
+ 10.0 Midwest  Oklahoma Sta
+----- Round 5 -----
+  1.0 South    North Caroli
+ 10.0 East     Marquette   
+----- Round 6 -----
+  1.0 South    North Caroli

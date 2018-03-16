@@ -1,0 +1,76 @@
+median: 70.0
+mean_finish: 0.666654
+median_finish: 0.738
+top20: 0.09
+top10: 0.042
+top5: 0.0205
+top2: 0.008
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+ 12.0 South    Middle Tenne
+ 13.0 South    Winthrop    
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+ 13.0 Midwest  Vermont     
+ 11.0 Midwest  Rhode Island
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  9.0 South    Seton Hall  
+ 13.0 South    Winthrop    
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  9.0 West     Vanderbilt  
+ 13.0 West     Bucknell    
+  3.0 West     Florida Stat
+  2.0 West     Arizona     
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  3.0 East     Baylor      
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  9.0 South    Seton Hall  
+  3.0 South    UCLA        
+ 13.0 West     Bucknell    
+  3.0 West     Florida Stat
+  8.0 East     Wisconsin   
+  3.0 East     Baylor      
+  5.0 Midwest  Iowa State  
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  3.0 South    UCLA        
+  3.0 West     Florida Stat
+  3.0 East     Baylor      
+  2.0 Midwest  Louisville  
+----- Round 5 -----
+  3.0 West     Florida Stat
+  2.0 Midwest  Louisville  
+----- Round 6 -----
+  3.0 West     Florida Stat

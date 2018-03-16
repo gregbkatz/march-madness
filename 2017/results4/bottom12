@@ -1,0 +1,76 @@
+median: 66.0
+mean_finish: 0.7091408
+median_finish: 0.8043
+top20: 0.066
+top10: 0.034
+top5: 0.016
+top2: 0.007
+----- Round 1 -----
+  1.0 South    North Caroli
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  9.0 South    Seton Hall  
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  2.0 South    Kentucky    
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+ 14.0 West     Florida Gulf
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  5.0 East     Virginia    
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  1.0 Midwest  Kansas      
+  4.0 Midwest  Purdue      
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  9.0 South    Seton Hall  
+  6.0 South    Cincinnati  
+  8.0 West     Northwestern
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+ 10.0 East     Marquette   
+  4.0 Midwest  Purdue      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  6.0 South    Cincinnati  
+  8.0 West     Northwestern
+  1.0 East     Villanova   
+  2.0 Midwest  Louisville  
+----- Round 5 -----
+  6.0 South    Cincinnati  
+  2.0 Midwest  Louisville  
+----- Round 6 -----
+  6.0 South    Cincinnati  

@@ -1,0 +1,76 @@
+median: 104.0
+mean_finish: 0.33578800000000003
+median_finish: 0.31
+top20: 0.3834
+top10: 0.241
+top5: 0.1314
+top2: 0.0486
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+ 10.0 South    Wichita Stat
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+ 11.0 West     Xavier      
+  2.0 West     Arizona     
+  8.0 East     Wisconsin   
+  5.0 East     Virginia    
+ 11.0 East     Providence  
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  1.0 South    North Caroli
+ 10.0 South    Wichita Stat
+  1.0 West     Gonzaga     
+  2.0 West     Arizona     
+  8.0 East     Wisconsin   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  1.0 South    North Caroli
+  1.0 West     Gonzaga     
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+----- Round 5 -----
+  1.0 West     Gonzaga     
+  1.0 Midwest  Kansas      
+----- Round 6 -----
+  1.0 Midwest  Kansas      

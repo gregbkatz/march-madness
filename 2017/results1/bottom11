@@ -1,0 +1,82 @@
+pwin: 0.0
+max_score: 160.0
+median: 43.0
+max_bonus: 110.0
+max_no_bonus: 89.0
+min_bonus: 0.0
+min_no_bonus: 10.0
+mean_finish: 717.783
+median_finish: 800.5
+top20: 0.057
+top10: 0.023
+top5: 0.013
+top2: 0.004
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+ 13.0 Midwest  Vermont     
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  8.0 South    Arkansas    
+  4.0 South    Butler      
+ 11.0 South    Kansas State
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+  4.0 West     West Virgini
+ 14.0 West     Florida Gulf
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  4.0 East     Florida     
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  1.0 Midwest  Kansas      
+ 13.0 Midwest  Vermont     
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+----- Round 3 -----
+  8.0 South    Arkansas    
+ 11.0 South    Kansas State
+ 16.0 West     South Dakota
+ 14.0 West     Florida Gulf
+ 16.0 East     Mount St. Ma
+  7.0 East     South Caroli
+ 13.0 Midwest  Vermont     
+  3.0 Midwest  Oregon      
+----- Round 4 -----
+  8.0 South    Arkansas    
+ 16.0 West     South Dakota
+ 16.0 East     Mount St. Ma
+  3.0 Midwest  Oregon      
+----- Round 5 -----
+ 16.0 West     South Dakota
+  3.0 Midwest  Oregon      
+----- Round 6 -----
+  3.0 Midwest  Oregon      

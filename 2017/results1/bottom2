@@ -1,0 +1,82 @@
+pwin: 0.0
+max_score: 123.0
+median: 40.0
+max_bonus: 85.0
+max_no_bonus: 49.0
+min_bonus: 0.0
+min_no_bonus: 10.0
+mean_finish: 773.187
+median_finish: 827.5
+top20: 0.014
+top10: 0.002
+top5: 0.0
+top2: 0.0
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+ 15.0 South    Northern Ken
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+ 10.0 West     Virginia Com
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  9.0 East     Virginia Tec
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  8.0 Midwest  Miami (FL)  
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+ 11.0 South    Kansas State
+ 15.0 South    Northern Ken
+  1.0 West     Gonzaga     
+ 13.0 West     Bucknell    
+  3.0 West     Florida Stat
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+ 12.0 East     North Caroli
+  6.0 East     Southern Met
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  5.0 Midwest  Iowa State  
+  3.0 Midwest  Oregon      
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+  5.0 South    Minnesota   
+ 11.0 South    Kansas State
+ 13.0 West     Bucknell    
+  3.0 West     Florida Stat
+ 16.0 East     Mount St. Ma
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+ 15.0 Midwest  Jacksonville
+----- Round 4 -----
+  5.0 South    Minnesota   
+ 13.0 West     Bucknell    
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+----- Round 5 -----
+  5.0 South    Minnesota   
+ 16.0 Midwest  North Caroli
+----- Round 6 -----
+ 16.0 Midwest  North Caroli

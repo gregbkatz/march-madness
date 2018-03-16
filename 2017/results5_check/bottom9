@@ -1,0 +1,76 @@
+median: 62.0
+mean_finish: 0.6599970000000001
+median_finish: 0.74
+top20: 0.1108
+top10: 0.0632
+top5: 0.0361
+top2: 0.0123
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+  1.0 South    North Caroli
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+  8.0 South    Arkansas    
+  4.0 South    Butler      
+  3.0 South    UCLA        
+  2.0 South    Kentucky    
+  8.0 West     Northwestern
+  4.0 West     West Virgini
+  3.0 West     Florida Stat
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+ 10.0 Midwest  Oklahoma Sta
+----- Round 3 -----
+  8.0 South    Arkansas    
+  2.0 South    Kentucky    
+  8.0 West     Northwestern
+  3.0 West     Florida Stat
+  4.0 East     Florida     
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+ 10.0 Midwest  Oklahoma Sta
+----- Round 4 -----
+  8.0 South    Arkansas    
+  8.0 West     Northwestern
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+----- Round 5 -----
+  8.0 South    Arkansas    
+  2.0 East     Duke        
+----- Round 6 -----
+  2.0 East     Duke        

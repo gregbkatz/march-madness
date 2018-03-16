@@ -1,0 +1,76 @@
+median: 42.0
+mean_finish: 0.7465206
+median_finish: 0.8304
+top20: 0.04
+top10: 0.013
+top5: 0.007
+top2: 0.004
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+ 15.0 West     North Dakota
+ 16.0 East     Mount St. Ma
+  8.0 East     Wisconsin   
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+ 11.0 East     Providence  
+  3.0 East     Baylor      
+  7.0 East     South Caroli
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+  9.0 South    Seton Hall  
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+ 13.0 West     Bucknell    
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+ 16.0 East     Mount St. Ma
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 15.0 East     Troy        
+  1.0 Midwest  Kansas      
+ 12.0 Midwest  Nevada      
+  3.0 Midwest  Oregon      
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+ 13.0 South    Winthrop    
+ 15.0 South    Northern Ken
+ 13.0 West     Bucknell    
+ 10.0 West     Virginia Com
+ 16.0 East     Mount St. Ma
+ 11.0 East     Providence  
+  1.0 Midwest  Kansas      
+  3.0 Midwest  Oregon      
+----- Round 4 -----
+ 13.0 South    Winthrop    
+ 13.0 West     Bucknell    
+ 11.0 East     Providence  
+  3.0 Midwest  Oregon      
+----- Round 5 -----
+ 13.0 South    Winthrop    
+  3.0 Midwest  Oregon      
+----- Round 6 -----
+  3.0 Midwest  Oregon      

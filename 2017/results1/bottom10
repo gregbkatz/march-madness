@@ -1,0 +1,82 @@
+pwin: 0.0
+max_score: 107.0
+median: 42.5
+max_bonus: 76.0
+max_no_bonus: 46.0
+min_bonus: 0.0
+min_no_bonus: 9.0
+mean_finish: 746.395
+median_finish: 803.0
+top20: 0.014
+top10: 0.002
+top5: 0.0
+top2: 0.0
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+  9.0 West     Vanderbilt  
+ 12.0 West     Princeton   
+ 13.0 West     Bucknell    
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+  5.0 East     Virginia    
+  4.0 East     Florida     
+ 11.0 East     Providence  
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+ 14.0 Midwest  Iona        
+ 10.0 Midwest  Oklahoma Sta
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+ 16.0 South    Texas Southe
+  5.0 South    Minnesota   
+  3.0 South    UCLA        
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+ 13.0 West     Bucknell    
+ 11.0 West     Xavier      
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+  4.0 East     Florida     
+ 11.0 East     Providence  
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  4.0 Midwest  Purdue      
+ 14.0 Midwest  Iona        
+ 15.0 Midwest  Jacksonville
+----- Round 3 -----
+  5.0 South    Minnesota   
+  3.0 South    UCLA        
+ 16.0 West     South Dakota
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+ 15.0 Midwest  Jacksonville
+----- Round 4 -----
+  3.0 South    UCLA        
+ 15.0 West     North Dakota
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+----- Round 5 -----
+ 15.0 West     North Dakota
+ 16.0 Midwest  North Caroli
+----- Round 6 -----
+ 16.0 Midwest  North Caroli

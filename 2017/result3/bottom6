@@ -1,0 +1,76 @@
+median: 40.0
+mean_finish: 0.7748826
+median_finish: 0.8379
+top20: 0.03
+top10: 0.007
+top5: 0.0
+top2: 0.0
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+ 16.0 West     South Dakota
+  8.0 West     Northwestern
+ 12.0 West     Princeton   
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+ 14.0 West     Florida Gulf
+ 10.0 West     Virginia Com
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+  5.0 East     Virginia    
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+ 15.0 East     Troy        
+ 16.0 Midwest  North Caroli
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  8.0 South    Arkansas    
+  5.0 South    Minnesota   
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+ 16.0 West     South Dakota
+ 13.0 West     Bucknell    
+ 14.0 West     Florida Gulf
+ 15.0 West     North Dakota
+  9.0 East     Virginia Tec
+ 13.0 East     East Tenness
+ 14.0 East     New Mexico S
+ 15.0 East     Troy        
+  8.0 Midwest  Miami (FL)  
+  4.0 Midwest  Purdue      
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  5.0 South    Minnesota   
+  7.0 South    Dayton      
+ 16.0 West     South Dakota
+ 15.0 West     North Dakota
+  9.0 East     Virginia Tec
+ 15.0 East     Troy        
+  8.0 Midwest  Miami (FL)  
+  3.0 Midwest  Oregon      
+----- Round 4 -----
+  7.0 South    Dayton      
+ 15.0 West     North Dakota
+ 15.0 East     Troy        
+  8.0 Midwest  Miami (FL)  
+----- Round 5 -----
+ 15.0 West     North Dakota
+ 15.0 East     Troy        
+----- Round 6 -----
+ 15.0 East     Troy        

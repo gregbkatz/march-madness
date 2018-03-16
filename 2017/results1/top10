@@ -1,0 +1,82 @@
+pwin: 0.021
+max_score: 215.0
+median: 82.0
+max_bonus: 108.0
+max_no_bonus: 136.0
+min_bonus: 0.0
+min_no_bonus: 16.0
+mean_finish: 297.068
+median_finish: 239.0
+top20: 0.457
+top10: 0.302
+top5: 0.205
+top2: 0.127
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+ 14.0 South    Kent State  
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+ 14.0 West     Florida Gulf
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+  5.0 East     Virginia    
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  8.0 Midwest  Miami (FL)  
+ 12.0 Midwest  Nevada      
+ 13.0 Midwest  Vermont     
+ 11.0 Midwest  Rhode Island
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+ 16.0 South    Texas Southe
+ 12.0 South    Middle Tenne
+  6.0 South    Cincinnati  
+  7.0 South    Dayton      
+  1.0 West     Gonzaga     
+  5.0 West     Notre Dame  
+ 11.0 West     Xavier      
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+  5.0 East     Virginia    
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  1.0 Midwest  Kansas      
+ 13.0 Midwest  Vermont     
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+----- Round 3 -----
+ 16.0 South    Texas Southe
+  7.0 South    Dayton      
+  1.0 West     Gonzaga     
+  7.0 West     Saint Mary's
+  5.0 East     Virginia    
+ 14.0 East     New Mexico S
+  1.0 Midwest  Kansas      
+  3.0 Midwest  Oregon      
+----- Round 4 -----
+  7.0 South    Dayton      
+  1.0 West     Gonzaga     
+  5.0 East     Virginia    
+  1.0 Midwest  Kansas      
+----- Round 5 -----
+  1.0 West     Gonzaga     
+  5.0 East     Virginia    
+----- Round 6 -----
+  1.0 West     Gonzaga     

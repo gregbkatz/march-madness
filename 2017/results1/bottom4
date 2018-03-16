@@ -1,0 +1,82 @@
+pwin: 0.0
+max_score: 186.0
+median: 41.0
+max_bonus: 134.0
+max_no_bonus: 55.0
+min_bonus: 0.0
+min_no_bonus: 9.0
+mean_finish: 728.883
+median_finish: 815.5
+top20: 0.047
+top10: 0.018
+top5: 0.006
+top2: 0.003
+----- Round 1 -----
+ 16.0 South    Texas Southe
+  9.0 South    Seton Hall  
+  5.0 South    Minnesota   
+ 13.0 South    Winthrop    
+ 11.0 South    Kansas State
+ 14.0 South    Kent State  
+ 10.0 South    Wichita Stat
+ 15.0 South    Northern Ken
+ 16.0 West     South Dakota
+  8.0 West     Northwestern
+ 12.0 West     Princeton   
+ 13.0 West     Bucknell    
+  6.0 West     Maryland    
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+ 12.0 East     North Caroli
+ 13.0 East     East Tenness
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+ 16.0 Midwest  North Caroli
+  8.0 Midwest  Miami (FL)  
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+ 15.0 Midwest  Jacksonville
+----- Round 2 -----
+ 16.0 South    Texas Southe
+ 13.0 South    Winthrop    
+ 14.0 South    Kent State  
+ 15.0 South    Northern Ken
+  8.0 West     Northwestern
+ 12.0 West     Princeton   
+  6.0 West     Maryland    
+ 15.0 West     North Dakota
+  1.0 East     Villanova   
+ 13.0 East     East Tenness
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+ 16.0 Midwest  North Caroli
+  5.0 Midwest  Iowa State  
+  3.0 Midwest  Oregon      
+ 10.0 Midwest  Oklahoma Sta
+----- Round 3 -----
+ 13.0 South    Winthrop    
+ 14.0 South    Kent State  
+ 12.0 West     Princeton   
+ 15.0 West     North Dakota
+ 13.0 East     East Tenness
+ 10.0 East     Marquette   
+ 16.0 Midwest  North Caroli
+ 10.0 Midwest  Oklahoma Sta
+----- Round 4 -----
+ 14.0 South    Kent State  
+ 12.0 West     Princeton   
+ 10.0 East     Marquette   
+ 10.0 Midwest  Oklahoma Sta
+----- Round 5 -----
+ 12.0 West     Princeton   
+ 10.0 Midwest  Oklahoma Sta
+----- Round 6 -----
+ 10.0 Midwest  Oklahoma Sta

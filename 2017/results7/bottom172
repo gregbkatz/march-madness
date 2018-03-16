@@ -1,0 +1,70 @@
+median: 42
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+  7.0 South    Dayton      
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  9.0 West     Vanderbilt  
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  9.0 East     Virginia Tec
+  5.0 East     Virginia    
+  4.0 East     Florida     
+  6.0 East     Southern Met
+ 14.0 East     New Mexico S
+  7.0 East     South Caroli
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+ 12.0 Midwest  Nevada      
+  4.0 Midwest  Purdue      
+  6.0 Midwest  Creighton   
+  3.0 Midwest  Oregon      
+  7.0 Midwest  Michigan    
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  8.0 South    Arkansas    
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  4.0 West     West Virgini
+  3.0 West     Florida Stat
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  4.0 Midwest  Purdue      
+  3.0 Midwest  Oregon      
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  8.0 South    Arkansas    
+  6.0 South    Cincinnati  
+  4.0 West     West Virgini
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  6.0 East     Southern Met
+  4.0 Midwest  Purdue      
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  6.0 South    Cincinnati  
+  2.0 West     Arizona     
+  6.0 East     Southern Met
+  4.0 Midwest  Purdue      
+----- Round 5 -----
+  2.0 West     Arizona     
+  4.0 Midwest  Purdue      
+----- Round 6 -----
+  4.0 Midwest  Purdue      

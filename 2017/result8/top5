@@ -1,0 +1,76 @@
+median: 110.0
+mean_finish: 0.29508883333333336
+median_finish: 0.24071666666666666
+top20: 0.44
+top10: 0.205
+top5: 0.1
+top2: 0.05
+----- Round 1 -----
+  1.0 South    North Caroli
+  8.0 South    Arkansas    
+ 12.0 South    Middle Tenne
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+  3.0 South    UCLA        
+ 10.0 South    Wichita Stat
+  2.0 South    Kentucky    
+  1.0 West     Gonzaga     
+  8.0 West     Northwestern
+  5.0 West     Notre Dame  
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  3.0 West     Florida Stat
+  7.0 West     Saint Mary's
+  2.0 West     Arizona     
+  1.0 East     Villanova   
+  8.0 East     Wisconsin   
+ 12.0 East     North Caroli
+  4.0 East     Florida     
+  6.0 East     Southern Met
+  3.0 East     Baylor      
+ 10.0 East     Marquette   
+  2.0 East     Duke        
+  1.0 Midwest  Kansas      
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+  4.0 Midwest  Purdue      
+ 11.0 Midwest  Rhode Island
+ 14.0 Midwest  Iona        
+ 10.0 Midwest  Oklahoma Sta
+  2.0 Midwest  Louisville  
+----- Round 2 -----
+  1.0 South    North Caroli
+  4.0 South    Butler      
+  6.0 South    Cincinnati  
+ 10.0 South    Wichita Stat
+  1.0 West     Gonzaga     
+  4.0 West     West Virgini
+ 11.0 West     Xavier      
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+  4.0 East     Florida     
+  3.0 East     Baylor      
+  2.0 East     Duke        
+  9.0 Midwest  Michigan Sta
+  5.0 Midwest  Iowa State  
+ 11.0 Midwest  Rhode Island
+  2.0 Midwest  Louisville  
+----- Round 3 -----
+  1.0 South    North Caroli
+ 10.0 South    Wichita Stat
+  1.0 West     Gonzaga     
+  7.0 West     Saint Mary's
+  1.0 East     Villanova   
+  2.0 East     Duke        
+  5.0 Midwest  Iowa State  
+  2.0 Midwest  Louisville  
+----- Round 4 -----
+  1.0 South    North Caroli
+  1.0 West     Gonzaga     
+  1.0 East     Villanova   
+  2.0 Midwest  Louisville  
+----- Round 5 -----
+  1.0 West     Gonzaga     
+  1.0 East     Villanova   
+----- Round 6 -----
+  1.0 East     Villanova   
