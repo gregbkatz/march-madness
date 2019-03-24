@@ -10,6 +10,7 @@ import numpy as np
 import urllib.request
 import copy
 import time
+import pdb
 
 def yahoo_order():
     #return [1,5,11,4,0,7,9,13,8,6,3,12,2,10]
@@ -1094,6 +1095,7 @@ class Forecast:
 # 2306,Kansas State,83.08,South,11a
 # 154,Wake Forest,82.96,South,11b
 
+        pdb.set_trace()
         self.teams.pop(2428)  # North Carolina Central
         self.teams.pop(2443)  # New Orleans
         self.teams.pop(2507)  # Providence
@@ -1152,6 +1154,7 @@ class Forecast:
                     header = row
                 else:
                     if row[0] == 'mens':
+                        pdb.set_trace()
                         curr_id = int(row[11])
                         teams[curr_id] = {}
                         i = 0
