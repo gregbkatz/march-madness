@@ -1,7 +1,9 @@
 import csv
 from scipy.special import erfinv, erf
 # import numpy as np
+import pdb
 from random import uniform
+import picks
 
 # region_order = {'East':100, 'West':300, 'South':400, 'Midwest':200, }
 def calc_win_prob(game):
@@ -104,6 +106,8 @@ def sort_region(region):
 
 class Forecast:
     def __init__(self, fname, truth_file=''):
+        self.forecast_file = fname
+
         self.get_synonyms()
         self.read_forecast(fname)
         self.make_name_to_id_lookup()
@@ -129,7 +133,7 @@ class Forecast:
                 else:
                     row[1] = int(row[1])
                     truth_list.append(row)
-                    curr_id = name_to_id(row[0], self.idmap, self.synonyms)
+                    curr_id = picks.name_to_id(row[0], self.idmap, self.synonyms)
                     if curr_id:
                         self.teams[curr_id]['final_round'] = int(row[1])
                     else:
@@ -218,7 +222,6 @@ class Forecast:
 
     def read_forecast(self, fname):
         teams = {}
-        self.forecast_file = fname
         with open(fname, 'r') as f:
             reader = csv.reader(f, delimiter=',')
             header = []
@@ -260,7 +263,22 @@ class Forecast:
             team = self.teams[teamid]
             self.idmap[team['team_name'].lower()] = team['team_id']
         
-    
+
+    def write_truth_file(self, outfile):
+        def write_team(team, fo):
+            if 'final_round' in team:
+                frnd = team['final_round']
+            else:
+                frnd = -1
+            fo.write('{},{}\n'.format(team['team_name'], frnd))
+
+        with open(outfile, 'wt') as fo:
+            fo.write('Name, Final Round\n')
+            for game in self.first_games:
+                write_team(game['team1'], fo)
+                write_team(game['team2'], fo)
+
+
     def get_synonyms(self):
         s = {
              'cal': 'california', 
@@ -344,7 +362,26 @@ class Forecast:
              "kansas st.": "kansas state",
              "n. mex. st.": "new mexico state",
              "st. mary\\'s": "saint mary's (ca)",
-             "oklahoma st.": "oklahoma state"
+             "oklahoma st.": "oklahoma state",
+
+             "mississippi st.": "mississippi state",
+             "lsu": "louisiana state",
+             "utah st.": "utah state",
+             "ucf": "central florida",
+             "arizona st.": "arizona state",
+             "uc irvine": "uc-irvine",
+             "murray st.": "murray state",
+             "ohio st.": "ohio state",
+             "georgia st.": "georgia state",
+             "north. kentucky": "northern kentucky",
+             # "": "",
+             # "": "",
+             # "": "",
+             # "": "",
+             # "": "",
+             # "": "",
+             # "": "",
+             # "": "",
              }
 
  

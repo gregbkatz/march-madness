@@ -14,7 +14,7 @@ def team_summary(team):
 
 
 def write_picks(picks):
-    forecast = Forecast('fivethirtyeight_ncaa_forecasts.csv')
+    forecast = Forecast('./forecast/fivethirtyeight_ncaa_forecasts.csv')
     n = 32
     i = 0
     for pick in picks:
@@ -41,12 +41,14 @@ def score_per_round_to_score_per_game(score):
 def score_all_picks(picks_array, brackets, use_bonus):
     Npicks = picks_array.shape[0]
     Nbrackets = brackets['ids'].shape[0]  
+    total = np.zeros((Nbrackets, Npicks))
     score = np.zeros((Nbrackets, Npicks))
+    bonus = np.zeros((Nbrackets, Npicks))
     for i in range(Npicks):
-        score[:,i] = score_brackets(picks_array[i], brackets, use_bonus)[:,0]
-    return score
+        total[:,i], score[:,i], bonus[:,i] = score_brackets(picks_array[i], brackets, use_bonus)
+    return total, score, bonus
 
-def score_brackets(picks, brackets, use_bonus):
+def score_brackets(picks, brackets, scoring_type):
 
     Npicks = picks.shape[0]
     Nbrackets = brackets['ids'].shape[0]
@@ -54,15 +56,16 @@ def score_brackets(picks, brackets, use_bonus):
     bracket_ids = np.expand_dims(brackets['ids'], axis=1)
     check = picks == bracket_ids
    
-    score_per_round = [10, 20, 40, 80, 120, 160]
-    # score_per_round = [1, 2, 4, 8, 16, 32]
-    if use_bonus: 
-        #bonus_multiplier = [1,1,2,2,3,3]
-        # bonus_multiplier = [1,1,3,4,5,6]
+    if scoring_type == 'family': 
+        score_per_round = [10, 20, 40, 80, 120, 160]
         bonus_multiplier = [5, 10, 20, 30, 40, 50]
-        # bonus_multiplier = [10, 20, 40, 80, 120, 160]
+    elif scoring_type == 'spacex':
+        score_per_round = [1, 2, 4, 8, 16, 32]
+        # bonus_multiplier = [1,1,2,2,3,3]
+        bonus_multiplier = [1,1,3,4,5,6]
     else:
-        bonus_multiplier = [0,0,0,0,0,0]
+        print('scoring type not recognized')
+        pdb.set_trace()
 
     score_per_game = score_per_round_to_score_per_game(score_per_round)
     bonus_multiplier_per_game = score_per_round_to_score_per_game(bonus_multiplier)
@@ -72,8 +75,10 @@ def score_brackets(picks, brackets, use_bonus):
     seed_diffs[seed_diffs < 0] = 0
     seed_diffs = np.expand_dims(seed_diffs, axis=1)
     bonus = seed_diffs * check * bonus_multiplier_per_game
-    total = np.sum(score + bonus, axis=2)
-    return total
+    score = np.sum(score, axis=2).squeeze()
+    bonus = np.sum(bonus, axis=2).squeeze()
+    total = score + bonus
+    return total, score, bonus
 
 def random_picks(forecast):
     picks_as_bracket = resolve_bracket(forecast.first_games)
@@ -124,7 +129,7 @@ def search(Npicks=10000, picks_in = np.zeros((0,63)), fname = '5050.csv'):
     picks = np.vstack((picks, picks_in))
     picks = np.vstack((picks, baseline))
     t1 = time.time()
-    total = score_all_picks(picks, brackets, use_bonus)
+    total, _, _ = score_all_picks(picks, brackets, use_bonus)
     print('time to score:', time.time() - t1)
     avg = total.mean(axis=0)
     perc95 = np.percentile(total, 95, axis=0)
@@ -148,31 +153,5 @@ def search(Npicks=10000, picks_in = np.zeros((0,63)), fname = '5050.csv'):
     return picks[i1,:]
 
 
-do_round2 = True
-if do_round2:
-    pickle_filename = 'mc_brackets_10000.p'
-    top_picks = read_top_picks()
-    fname = 'fivethirtyeight_ncaa_forecasts.csv'
-    n_iters = 1
-    Npicks = 10000
-else: 
-    pickle_filename = 'mc_brackets_1000.p'
-    top_picks = np.zeros((0,63))
-    fname = '5050.csv'
-    n_iters = 1000
-    Npicks = 500000
 
-with open(pickle_filename, 'rb') as fp:
-    brackets = pickle.load(fp)
-Nbrackets = brackets['ids'].shape[0]
-
-use_bonus = True
-baseline, _ = gen_brackets.baseline()
-baseline_score = score_brackets(baseline, brackets, use_bonus)
-# pdb.set_trace()
-
-for i in range(n_iters):
-    picks = search(Npicks = Npicks, picks_in=top_picks, fname=fname)
-    if do_round2:
-        write_picks(picks)
 

@@ -10,13 +10,13 @@ def yahoo_sort_teams(teams):
     # East  = yahoo_html_region(teams[35:])
     # Midwest = yahoo_html_region(teams[49:])
     East = yahoo_html_region(teams[0:])
-    Midwest = yahoo_html_region(teams[14:])
-    West  = yahoo_html_region(teams[28:])
-    South = yahoo_html_region(teams[42:])
+    West = yahoo_html_region(teams[14:])
+    South  = yahoo_html_region(teams[28:])
+    Midwest = yahoo_html_region(teams[42:])
 
     x = []
     for i in range(len(South)):
-        x.append(East[i] + Midwest[i] + West[i] + South[i])
+        x.append(East[i] + West[i] + South[i] + Midwest[i])
     x.append(teams[56:60]) # Final Four
     x.append(teams[60:62]) # Finals
     x.append(teams[62:63]) # Champion
@@ -51,7 +51,6 @@ def parse_members_table(fname):
         urls = []
         renames = member_renames()
         for entry in a:
-            # pdb.set_trace()
             if entry[0:16] == '="https://profil':
                 d = entry.split('>')
                 name = d[1][0:-3]
@@ -75,7 +74,7 @@ def member_renames():
             "Nicholas Galano": "Nick"}   
 
 class Picks:
-    def __init__(self, fname, alt = False):
+    def __init__(self, fname):
         teams = []
         if fname[0:4] == 'http':
             response = urllib.request.urlopen(fname)
@@ -89,10 +88,10 @@ class Picks:
             self.teams = teams
 
         else:   
-            if alt:
-                self.read_picks_alt(fname)
-            else:
-                self.read_picks(fname)
+            # if alt:
+            self.read_picks_alt(fname)
+            # else:
+                # self.read_picks(fname)
    
     def write_picks(self, outname):
         with open(outname, 'wt') as f:
@@ -121,34 +120,31 @@ class Picks:
                        
         self.picks = picks 
  
-    def read_picks(self,fname):
-        picks = []
-        with open(fname, 'r') as f:
-            reader = csv.reader(f)
-            header = []
-            for row in reader:
-                if not header:
-                    header = row
-                    for col in header:
-                        picks.append([])
-                else:
-                    i = 0
-                    for col in row:
-                        if col:
-                            picks[i].append(col)
-                        i += 1
-        self.picks = picks
+    # def read_picks(self,fname):
+    #     picks = []
+    #     with open(fname, 'r') as f:
+    #         reader = csv.reader(f)
+    #         header = []
+    #         for row in reader:
+    #             if not header:
+    #                 header = row
+    #                 for col in header:
+    #                     picks.append([])
+    #             else:
+    #                 i = 0
+    #                 for col in row:
+    #                     if col:
+    #                         picks[i].append(col)
+    #                     i += 1
+    #     self.picks = picks
         
     def convert_picks_to_id(self, idmap, synonyms={}):
         pick_ids = [] 
-        i = 0
         for rd in self.picks:
-            pick_ids.append([])
             for pick in rd:
                 pick_id = name_to_id(pick, idmap, synonyms)
                 if pick_id:
-                    pick_ids[i].append(pick_id)
-            i += 1
+                    pick_ids.append(pick_id)
         self.pick_ids = pick_ids
 
 def name_to_id(name, idmap, synonyms={}):                
@@ -156,9 +152,10 @@ def name_to_id(name, idmap, synonyms={}):
     if name in synonyms:
         name = synonyms[name].lower().strip()
     if name in idmap:
-        return idmap[name]
+        return int(idmap[name])
     else:
         print('"{}" not found in forecast bracket'.format(name)) 
+        pdb.set_trace()
         return []
 
 

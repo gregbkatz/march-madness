@@ -3,13 +3,13 @@ from forecast import Forecast, resolve_bracket
 import numpy as np
 
 def baseline():
-    forecast = Forecast('fivethirtyeight_ncaa_forecasts.csv')
+    forecast = Forecast('./forecast/fivethirtyeight_ncaa_forecasts.csv')
     bracket = resolve_bracket(forecast.first_games, favorite=True)
     ids, seed_diffs = convert_bracket(bracket)
     return ids, seed_diffs
 
-def gen_brackets(N, fname = 'fivethirtyeight_ncaa_forecasts.csv', verbose = False):
-    forecast = Forecast('fivethirtyeight_ncaa_forecasts.csv')
+def gen_brackets(N, fname = 'fivethirtyeight_ncaa_forecasts.csv', truth_file='', verbose = False):
+    forecast = Forecast(fname, truth_file)
     ids = np.zeros((N, 63), dtype='uint16')
     seed_diffs = np.zeros((N, 63), dtype='int8')
     for i in range(N):
