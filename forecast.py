@@ -13,15 +13,16 @@ def sort_region(region):
             region[5], region[2], region[6], region[1]]
 
 def sort_first_games(first_games):
-    m = first_games
-    mp = sorted(m, key=lambda k:k['team0'].seed)
-    mpp = sorted(mp, key=lambda k:k['team0'].region)
+    first_games = sorted(first_games, key=lambda k:k[0].seed)
+    first_games = sorted(first_games, key=lambda k:k[0].region)
 
-    East = sort_region(mpp[0:8])
-    Midwest = sort_region(mpp[8:16])
-    South = sort_region(mpp[16:24])
-    West = sort_region(mpp[24:32])
+    # Alphabetical
+    East =    sort_region(first_games[0:8])
+    Midwest = sort_region(first_games[8:16])
+    South =   sort_region(first_games[16:24])
+    West =    sort_region(first_games[24:32])
      
+    # Use order from actual bracket here
     return East + West + South + Midwest 
 
 def csv_row2dict(row, fieldnames):
@@ -95,22 +96,15 @@ class Forecast:
                 print(team.seed, team_id, team.region, team.name)
 
     def find_first_games(self):
-        teams = self.teams
         games = []
-        for teamid in teams:
-            team = teams[teamid]
-            if team.playin_flag:
-               print(team.name)
-            else:
-                if team.seed <= 8:
-                    for teamid2 in teams:
-                        team1 = teams[teamid2]
-                        if team1.region == team.region:
-                            if not team1.playin_flag:
-                                if team.seed + team1.seed == 17:
-                                    games.append({"team0":team, "team1":team1, "round": 1}) 
+        for _, team1 in self.teams.items():
+            assert(not team1.playin_flag)
+            if team1.seed <= 8:
+                for _, team2 in self.teams.items():
+                    if team1.region == team2.region and team2.seed == 17 - team1.seed:
+                        games.append((team1, team2)) 
         first_games = sort_first_games(games)
-        self.first_games = Round(first_games)
+        self.first_games = Round(first_games, rnd=1)
 
     def read_forecast(self, fname):
         teams = {}
@@ -138,15 +132,14 @@ class Forecast:
             return int(self.idmap[name])
         else:
             print('"{}" not found in forecast bracket'.format(name)) 
-            pdb.set_trace()
             raise("Error")
 
     def write_truth_file(self, outfile):
         with open(outfile, 'wt') as fo:
             fo.write('Name, Final Round\n')
             for game in self.first_games.games:
-                game.team0.write_to_truth_file(fo)
-                game.team1.write_to_truth_file(fo)
+                game.teams[0].write_to_truth_file(fo)
+                game.teams[1].write_to_truth_file(fo)
 
  
 

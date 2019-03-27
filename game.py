@@ -3,20 +3,30 @@ from random import uniform
 import pdb
 
 class Game:
-    def __init__(self, data, favorite=False):
-        self.team0 = data['team0']
-        self.team1 = data['team1']
-        self.round = data['round']
+    def __init__(self, teams, rnd, favorite=False):
+        self.teams = teams
+        self.round = rnd
         self.favorite = favorite
         self.p_win = self.calc_win_prob()
-        self.error = []
-        self.check_fit()
+        sample = 0.5 if self.favorite else uniform(0,1)
+        self.result = self.resolve_game_result(sample)
+        # self.check_fit()
+
+    def get_winner(self):
+        return self.teams[self.result]
+
+    def get_loser(self):
+        return self.teams[not self.result]
+
+
+    def get_seed_diff(self):
+        return self.get_winner().seed - self.get_loser().seed
 
     def check_fit(self):
         # @TODO: This only makes sense for first round
         # Should add code for actual fit check across Monte Carlo
-        diff = self.team0.rating - self.team1.rating
-        p_win538 = self.team0.rd_win[self.round - 1]
+        diff = self.teams[0].rating - self.teams[1].rating
+        p_win538 = self.teams[0].rd_win[self.round - 1]
 
         # nsigma = 2**0.5*erfinv(2*p_win538-1)
         # sigma = diff/nsigma
@@ -25,7 +35,7 @@ class Game:
         self.error = error
 
     def calc_win_prob(self):
-        diff = self.team0.rating - self.team1.rating
+        diff = self.teams[0].rating - self.teams[1].rating
         return 0.5*(1+erf(diff/10/2**0.5))
 
     def resolve_game_result(self, sample):
@@ -36,8 +46,8 @@ class Game:
         # For higher rated to win use 0.5
         
         # Get final round truth values
-        t1_frnd = self.team0.final_round
-        t2_frnd = self.team1.final_round
+        t1_frnd = self.teams[0].final_round
+        t2_frnd = self.teams[1].final_round
 
         # No truth value for this game
         if t1_frnd == -1 and t2_frnd == -1:
@@ -67,12 +77,18 @@ class Game:
             assert(t2_frnd == rnd)
             return 0
 
-    def resolve(self):
-        sample = 0.5 if self.favorite else uniform(0,1)
-        self.result = self.resolve_game_result(sample)
-        if self.result:
-            self.win_id = self.team1.id
-            self.seed_diff = self.team1.seed - self.team0.seed
-        else:
-            self.win_id = self.team0.id
-            self.seed_diff = self.team0.seed - self.team1.seed
+    def __str__(self):
+        out = ""
+        out += self.summary() + '\n'
+        for item in vars(self).items():
+            if isinstance(item[1], list):
+                out += '  {:12} [({})]\n'.format(item[0], len(item[1]))
+            else:
+                out += '  {:12} {}\n'.format(item[0], item[1])
+        return out
+
+
+    def summary(self):
+        winner = self.get_winner().summary()
+        loser = self.get_loser().summary()                
+        return winner + " over " + loser

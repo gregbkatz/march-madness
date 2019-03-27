@@ -17,7 +17,6 @@ def gen_brackets(N, fname = 'fivethirtyeight_ncaa_forecasts.csv', truth_file='',
         if verbose and i % 1000 == 0:
             print(i)
         bracket = Bracket(forecast.first_games)
-        pdb.set_trace()
         ids[i,:], seed_diffs[i,:] = convert_bracket(bracket.rounds)
     return ids, seed_diffs
 
@@ -27,8 +26,8 @@ def convert_bracket(bracket):
     i = 0
     for rd in bracket:
         for game in rd.games:
-            ids[i] = game.win_id
-            seed_diffs[i] = game.seed_diff
+            ids[i] = game.get_winner().id
+            seed_diffs[i] = game.get_seed_diff()
             i += 1 
     return ids, seed_diffs
 

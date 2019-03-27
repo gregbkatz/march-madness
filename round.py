@@ -1,32 +1,37 @@
 from game import Game
+import pdb
 
 class Round:
-    def __init__(self, games, favorite=False):
+    def __init__(self, games, rnd=1, favorite=False):
         self.favorite = favorite
         self.games = []
+        self.rnd = rnd
         for game in games:
-            self.games.append(Game(game))
+            self.games.append(Game(game, self.rnd))
 
     def next_round(self):
+        if len(self.games) < 2:
+            return False
+
         games = []
-        skip = True
-        last_team = {}
+        for i in range(len(self.games)//2):
+            team1 = self.games[2*i].get_winner()
+            team2 = self.games[2*i+1].get_winner()
+            games.append((team1, team2)) 
+
+        return Round(games, rnd=self.rnd + 1, favorite=self.favorite)
+
+    def summary(self):
+        out = ""
         for game in self.games:
-            if game.result:
-                team = game.team1
+           out += game.summary() + '\n'
+        return out
+
+    def __str__(self):
+        out = ""
+        for item in vars(self).items():
+            if isinstance(item[1], list):
+                out += '  {:12} [({})]\n'.format(item[0], len(item[1]))
             else:
-                team = game.team0
-            if skip:
-                skip = False
-            else:
-                rnd = game.round
-                games.append({"team0":last_team, "team1":team, "round":rnd+1})
-                skip = True
-
-            last_team = team
-        return Round(games, self.favorite)
-
-
-    def resolve(self):
-        for game in self.games:
-            game.resolve()
+                out += '  {:12} {}\n'.format(item[0], item[1])
+        return out
