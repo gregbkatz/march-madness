@@ -5,6 +5,13 @@ import gen_brackets
 import search_picks
 from scipy.stats import rankdata 
 
+def convert_picks_to_id(picks, forecast):
+    pick_ids = [] 
+    for rd in picks:
+        for pick in rd:
+            pick_ids.append(forecast.name_to_id(pick))
+    return pick_ids
+
 def probability_matrix(ranks):
     shp = np.shape(ranks)
     pmat = np.zeros((shp[1], shp[1]))
@@ -23,13 +30,9 @@ class Compete:
         self.bonus_type = bonus_type
  
         j = 0
-        for j in range(len(self.picks)):
-            if not hasattr(self.picks[j], 'pick_ids'):
-                self.picks[j].convert_picks_to_id(self.forecast.idmap, self.forecast.synonyms) 
-
         self.pick_ids = np.zeros((len(picks), 63), dtype='uint16')
-        for i, pick in enumerate(picks):
-            self.pick_ids[i,:] = pick.pick_ids
+        for j in range(len(self.picks)):
+            self.pick_ids[j,:] = convert_picks_to_id(self.picks[j].picks, self.forecast) 
 
         #for picks in self.picks:
         #    check_picks(picks.picks)

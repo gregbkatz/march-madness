@@ -1,6 +1,6 @@
 import pickle
 import numpy as np
-from forecast import Forecast, resolve_bracket
+from forecast import Forecast, Bracket
 import gen_brackets
 import pdb
 import time
@@ -81,10 +81,10 @@ def score_brackets(picks, brackets, scoring_type):
     return total, score, bonus
 
 def random_picks(forecast):
-    picks_as_bracket = resolve_bracket(forecast.first_games)
+    picks_as_bracket = Bracket(forecast.first_games)
     picks = np.zeros(63, dtype='uint16')
     i = 0
-    for rd in picks_as_bracket:
+    for rd in picks_as_bracket.bracket:
         for game in rd:
             picks[i] = game['win_id']
             i += 1

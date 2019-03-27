@@ -1,5 +1,5 @@
 import pickle
-from forecast import Forecast, resolve_bracket
+from forecast import Forecast, Bracket
 import numpy as np
 
 def baseline():
@@ -15,8 +15,8 @@ def gen_brackets(N, fname = 'fivethirtyeight_ncaa_forecasts.csv', truth_file='',
     for i in range(N):
         if verbose and i % 1000 == 0:
             print(i)
-        bracket = resolve_bracket(forecast.first_games)
-        ids[i,:], seed_diffs[i,:] = convert_bracket(bracket)
+        bracket = Bracket(forecast.first_games)
+        ids[i,:], seed_diffs[i,:] = convert_bracket(bracket.rounds)
     return ids, seed_diffs
 
 def convert_bracket(bracket):
@@ -24,9 +24,9 @@ def convert_bracket(bracket):
     seed_diffs = np.zeros(63, dtype='int8')
     i = 0
     for rd in bracket:
-        for game in rd:
-            ids[i] = game['win_id']
-            seed_diffs[i] = game['seed_diff']
+        for game in rd.games:
+            ids[i] = game.win_id
+            seed_diffs[i] = game.seed_diff
             i += 1 
     return ids, seed_diffs
 

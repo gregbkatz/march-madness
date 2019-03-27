@@ -3,18 +3,21 @@ import compete
 import pdb
 import picks
 import forecast
+import random 
+random.seed(0)
 
 # def __init__(self, d, ncases, forecast_file, truth_file, source, use_bonus):
 
-d = 'family'
-# d = 'spacex'
+# d = 'family'
+d = 'spacex'
 
 forecast_file = './forecast/fivethirtyeight_ncaa_forecasts.csv'
+# forecast_file = './forecast/5050.csv'
 # truth_file = ''
 # truth_file = 'rd1.truth'
-# truth_file = 'rd2.truth'
-truth_file = 'scenario.truth'
-ncases = 10000
+truth_file = 'rd2.truth'
+# truth_file = 'scenario.truth'
+ncases = 1000
 
 pcks = []
 names = []

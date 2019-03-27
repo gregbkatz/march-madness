@@ -1,5 +1,6 @@
 import pdb
 import urllib.request
+import forecast
 
 def yahoo_html_region(picks):
     return [picks[0:8], picks[8:12], picks[12:14]]
@@ -138,24 +139,7 @@ class Picks:
     #                     i += 1
     #     self.picks = picks
         
-    def convert_picks_to_id(self, idmap, synonyms={}):
-        pick_ids = [] 
-        for rd in self.picks:
-            for pick in rd:
-                pick_id = name_to_id(pick, idmap, synonyms)
-                if pick_id:
-                    pick_ids.append(pick_id)
-        self.pick_ids = pick_ids
 
-def name_to_id(name, idmap, synonyms={}):                
-    name = name.lower().strip()
-    if name in synonyms:
-        name = synonyms[name].lower().strip()
-    if name in idmap:
-        return int(idmap[name])
-    else:
-        print('"{}" not found in forecast bracket'.format(name)) 
-        pdb.set_trace()
-        return []
+
 
 
