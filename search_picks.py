@@ -25,60 +25,6 @@ def write_picks(picks):
             n = n/2
             i = 0
 
-def score_per_round_to_score_per_game(score):
-    score_array = np.zeros(63)
-    n = 32
-    i = 0
-    j = 0
-    while n >= 1:
-        n = int(n)
-        score_array[i:i+n] = score[j]
-        j += 1
-        i += n
-        n = n/2
-    return score_array
-
-def score_all_picks(picks_array, brackets, use_bonus):
-    Npicks = picks_array.shape[0]
-    Nbrackets = brackets['ids'].shape[0]  
-    total = np.zeros((Nbrackets, Npicks))
-    score = np.zeros((Nbrackets, Npicks))
-    bonus = np.zeros((Nbrackets, Npicks))
-    for i in range(Npicks):
-        total[:,i], score[:,i], bonus[:,i] = score_brackets(picks_array[i], brackets, use_bonus)
-    return total, score, bonus
-
-def score_brackets(picks, brackets, scoring_type):
-
-    Npicks = picks.shape[0]
-    Nbrackets = brackets['ids'].shape[0]
-    picks = np.expand_dims(picks, axis=0)
-    bracket_ids = np.expand_dims(brackets['ids'], axis=1)
-    check = picks == bracket_ids
-   
-    if scoring_type == 'family': 
-        score_per_round = [10, 20, 40, 80, 120, 160]
-        bonus_multiplier = [5, 10, 20, 30, 40, 50]
-    elif scoring_type == 'spacex':
-        score_per_round = [1, 2, 4, 8, 16, 32]
-        # bonus_multiplier = [1,1,2,2,3,3]
-        bonus_multiplier = [1,1,3,4,5,6]
-    else:
-        print('scoring type not recognized')
-        pdb.set_trace()
-
-    score_per_game = score_per_round_to_score_per_game(score_per_round)
-    bonus_multiplier_per_game = score_per_round_to_score_per_game(bonus_multiplier)
-    score = score_per_game * check
-
-    seed_diffs = brackets['seed_diffs']
-    seed_diffs[seed_diffs < 0] = 0
-    seed_diffs = np.expand_dims(seed_diffs, axis=1)
-    bonus = seed_diffs * check * bonus_multiplier_per_game
-    score = np.sum(score, axis=2).squeeze()
-    bonus = np.sum(bonus, axis=2).squeeze()
-    total = score + bonus
-    return total, score, bonus
 
 def random_picks(forecast):
     picks_as_bracket = Bracket(forecast.first_games)

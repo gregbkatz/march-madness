@@ -6,8 +6,12 @@ class Round:
         self.favorite = favorite
         self.games = []
         self.rnd = rnd
-        for game in games:
-            self.games.append(Game(game, self.rnd))
+        for teams in games:
+            self.games.append(Game(teams, self.rnd))
+
+    def resolve(self):
+        for game in self.games:
+            game.resolve()
 
     def next_round(self):
         if len(self.games) < 2:

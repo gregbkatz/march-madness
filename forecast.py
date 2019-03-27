@@ -6,7 +6,21 @@ from game import Game
 from round import Round
 from bracket import Bracket
 from team import Team
+import numpy as np
+import pickle
+import os
 
+def fname_from_fullpath(fullpath):
+    return os.path.splitext(os.path.basename(fullpath))[0]
+
+def load_pickle(fname):
+    with open(fname, 'rb') as fp:
+        data = pickle.load(fp)
+    return data['ids'], data['seed_diffs']
+
+def write_pickle(fname, ids, seed_diffs):
+    with open(fname, 'wb') as fp:
+        pickle.dump({'ids':ids, 'seed_diffs':seed_diffs}, fp)
 
 def sort_region(region):
     return [region[0], region[7], region[4], region[3], 
@@ -57,6 +71,8 @@ class Forecast:
             self.add_truth(truth_file)
         self.hardcode_first_round() 
         self.find_first_games()
+        self.write_truth_file('base.truth')
+
 
     def add_truth(self, truth_file):
         # Expects csv with a header row and then
@@ -141,6 +157,28 @@ class Forecast:
                 game.teams[0].write_to_truth_file(fo)
                 game.teams[1].write_to_truth_file(fo)
 
- 
+    def baseline(self):
+        return Bracket(self.first_games).convert()
 
+    def get_pickle_fname(self, N):
+        forecast_file = fname_from_fullpath(self.forecast_file)
+        truth_file = fname_from_fullpath(self.truth_file)
+        return "./brackets/{}_{}_{}.p".format(forecast_file, truth_file, N)
+
+    def gen_brackets(self, N, verbose=False):
+        fname = self.get_pickle_fname(N)
+        if os.path.isfile(fname):
+            print('Found existing pickle')
+            return load_pickle(fname)
+
+        print('Generating brackets')
+        ids = np.zeros((N, 63), dtype='uint16')
+        seed_diffs = np.zeros((N, 63), dtype='int8')
+        for i in range(N):
+            if verbose and i % 1000 == 0:
+                print(i)
+            ids[i,:], seed_diffs[i,:] = Bracket(self.first_games).convert()
+        write_pickle(fname, ids, seed_diffs)
+        print('Bracket generation complete.')
+        return ids, seed_diffs
 

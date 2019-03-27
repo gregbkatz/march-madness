@@ -1,16 +1,9 @@
 import numpy as np
-import time 
 import pdb
-import gen_brackets
-import search_picks
 from scipy.stats import rankdata 
-
-def convert_picks_to_id(picks, forecast):
-    pick_ids = [] 
-    for rd in picks:
-        for pick in rd:
-            pick_ids.append(forecast.name_to_id(pick))
-    return pick_ids
+import os
+from picks import Picks
+from forecast import Forecast
 
 def probability_matrix(ranks):
     shp = np.shape(ranks)
@@ -22,32 +15,75 @@ def probability_matrix(ranks):
     pmat = pmat/shp[0]
     return pmat
 
+def score_per_round_to_score_per_game(score):
+    score_array = np.zeros(63)
+    n = 32
+    i = 0
+    j = 0
+    while n >= 1:
+        n = int(n)
+        score_array[i:i+n] = score[j]
+        j += 1
+        i += n
+        n = n/2
+    return score_array
+
+def score_brackets(pick_ids, bracket_ids, bracket_seed_diffs, scoring_type):
+
+    pick_ids = np.expand_dims(pick_ids, axis=0)
+    bracket_ids = np.expand_dims(bracket_ids, axis=1)
+    check = pick_ids == bracket_ids
+   
+    if scoring_type == 'family': 
+        score_per_round = [10, 20, 40, 80, 120, 160]
+        bonus_multiplier = [5, 10, 20, 30, 40, 50]
+    elif scoring_type == 'spacex':
+        score_per_round = [1, 2, 4, 8, 16, 32]
+        # bonus_multiplier = [1,1,2,2,3,3]
+        bonus_multiplier = [1,1,3,4,5,6]
+    else:
+        print('scoring type not recognized')
+        pdb.set_trace()
+
+    score_per_game = score_per_round_to_score_per_game(score_per_round)
+    bonus_multiplier_per_game = score_per_round_to_score_per_game(bonus_multiplier)
+    score = score_per_game * check
+
+    bracket_seed_diffs[bracket_seed_diffs < 0] = 0
+    bracket_seed_diffs = np.expand_dims(bracket_seed_diffs, axis=1)
+    bonus = bracket_seed_diffs * check * bonus_multiplier_per_game
+    score = np.sum(score, axis=2).squeeze()
+    bonus = np.sum(bonus, axis=2).squeeze()
+    total = score + bonus
+    return total, score, bonus
+
+
 class Compete:
-    def __init__(self, picks, forecast, bonus_type):
-        self.forecast = forecast
-        self.picks = picks
+    def __init__(self, picks_dir, forecast_file, truth_file, scoring_type):
+        self.forecast = Forecast(forecast_file, truth_file)
 
-        self.bonus_type = bonus_type
+        self.all_picks = []
+        for file in os.listdir(picks_dir):
+            if file.endswith(".picks"):
+                self.all_picks.append(Picks(os.path.join(picks_dir, file)))
+
+        self.scoring_type = scoring_type
+        self.Npicks = len(self.all_picks)
  
-        j = 0
-        self.pick_ids = np.zeros((len(picks), 63), dtype='uint16')
-        for j in range(len(self.picks)):
-            self.pick_ids[j,:] = convert_picks_to_id(self.picks[j].picks, self.forecast) 
+        self.pick_ids = np.zeros((self.Npicks, 63), dtype='uint16')
+        for j, curr_picks in enumerate(self.all_picks):
+            self.pick_ids[j,:] = curr_picks.convert_to_id(self.forecast) 
 
-        #for picks in self.picks:
-        #    check_picks(picks.picks)
-
-    def run_MC(self, ncases, verbose=True):
-        
-        ids, seed_diffs = gen_brackets.gen_brackets(ncases, self.forecast.forecast_file, self.forecast.truth_file)
-        brackets = {'ids':ids, 'seed_diffs':seed_diffs}
-        scores, no_bonus, bonus = search_picks.score_all_picks(self.pick_ids, brackets, self.bonus_type)
+    def run_MC(self, Nbrackets, verbose=True):
+        self.Nbrackets = Nbrackets
+        self.bracket_ids, self.bracket_seed_diffs = self.forecast.gen_brackets(Nbrackets)
+        scores, no_bonus, bonus = self.score_all_picks()
                   
-        ranks = np.zeros((ncases, len(self.picks)))
-        ranks2 = np.zeros((ncases, len(self.picks)))     
+        ranks = np.zeros((self.Nbrackets, self.Npicks))
+        ranks2 = np.zeros((self.Nbrackets, self.Npicks))     
         for i in range(scores.shape[0]):
-            ranks[i,:]  = len(self.picks) + 1 - rankdata(scores[i,:], 'max')
-            ranks2[i,:] = len(self.picks) + 1 - rankdata(scores[i,:], 'min')
+            ranks[i,:]  = self.Npicks + 1 - rankdata(scores[i,:], 'max')
+            ranks2[i,:] = self.Npicks + 1 - rankdata(scores[i,:], 'min')
 
         print('Start Calcs')
         medians = np.median(scores, axis=0)
@@ -68,13 +104,11 @@ class Compete:
         mean_finish = np.mean(ranks, axis=0)
         median_finish = np.median(ranks, axis=0)
         print('Finish Calcs')
-        # self.brackets = brackets
-        # self.bracket_arrays = bracket_arrays
+
         self.scores = scores 
         self.no_bonus = no_bonus
         self.bonus = bonus
         self.ranks = ranks 
-        self.ncases = ncases
         self.medians = medians
         self.pmat = pmat
         self.min_scores = min_scores
@@ -93,29 +127,23 @@ class Compete:
         self.median_finish = median_finish
 
 
-    def analyze_brackets(self):
-        teams = self.forecast.teams
-        self.p_win = np.zeros((len(teams), len(self.bracket_arrays)))
-        i = 0
-        team_ids = [] 
-        for team_id in teams:
-            j = 0
-            team_ids.append(team_id)
-            for ba in self.bracket_arrays:
-                p = probability_in_round(ba, team_id)
-                self.p_win[i,j] = p 
-                j += 1
-            i += 1
+    def score_all_picks(self):
+        total = np.zeros((self.Nbrackets, self.Npicks))
+        score = np.zeros((self.Nbrackets, self.Npicks))
+        bonus = np.zeros((self.Nbrackets, self.Npicks))
+        for i in range(self.Npicks):
+            total[:,i], score[:,i], bonus[:,i] = score_brackets(
+                self.pick_ids[i,:], self.bracket_ids, self.bracket_seed_diffs, self.scoring_type)
+        return total, score, bonus
 
-        p_win_sort = self.p_win
-        full_sort_idx = np.arange(0, len(teams)) 
-        for i in range(0,5):
-            sort_idx = np.argsort(p_win_sort[:,i])
-            p_win_sort = p_win_sort[sort_idx,:]
-            full_sort_idx = full_sort_idx[sort_idx]
-        full_sort_idx = full_sort_idx[::-1]
-        for i in full_sort_idx: 
-            out = '{:30}'.format(teams[team_ids[i]]['team_name'])
-            for j in range(0,len(self.p_win[i,:])):            
-                out += '{:4.0f}'.format(self.p_win[i][j]*100)
-            print(out)
+    def summary(self):
+        print(self.forecast.forecast_file)
+        print(self.forecast.truth_file)
+        print(self.Nbrackets)
+        print('{:30},{:10},{:10},{:10},{:10},{:10},{:10}'.format(
+            'Bracket Name', 'min score', 'max score', 'P lose', 'P win', 'min rank', 'max rank'))
+        # for i in mcc.curr_order:
+        for i in range(self.Npicks):
+            print('{:30},{:10.0f},{:10.0f},{:10.1f},{:10.1f},{:10.0f},{:10.0f}'.format(
+                self.all_picks[i].name, self.min_scores[i], self.max_scores[i], self.plose[i]*100, self.pwin[i]*100, 
+                self.worst_finish[i], self.best_finish[i]))
