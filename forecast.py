@@ -94,27 +94,6 @@ class Forecast:
             if team.playin_flag > 0:
                 print(team.seed, team_id, team.region, team.name)
 
-    def check_fit(self):
-        games = self.first_games
-        i = 0
-        for game in games:
-            diff = game.team0.rating - game.team1.rating
-            p_win = game.team0['rd2_win']
-
-            nsigma = 2**0.5*erfinv(2*p_win-1)
-            sigma = diff/nsigma
-            est = 0.5*(1+erf(diff/10/2**0.5))
-            error = est - p_win 
-
-            games[i]['diff'] = diff
-            games[i]['nsigma'] = nsigma
-            games[i]['sigma'] = sigma
-            games[i]['est'] = est
-            games[i]['error'] = error
-
-            i = i + 1
-        self.first_games = games
-
     def find_first_games(self):
         teams = self.teams
         games = []

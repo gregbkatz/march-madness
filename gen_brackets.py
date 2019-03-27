@@ -1,6 +1,7 @@
 import pickle
 from forecast import Forecast, Bracket
 import numpy as np
+import pdb
 
 def baseline():
     forecast = Forecast('./forecast/fivethirtyeight_ncaa_forecasts.csv')
@@ -16,6 +17,7 @@ def gen_brackets(N, fname = 'fivethirtyeight_ncaa_forecasts.csv', truth_file='',
         if verbose and i % 1000 == 0:
             print(i)
         bracket = Bracket(forecast.first_games)
+        pdb.set_trace()
         ids[i,:], seed_diffs[i,:] = convert_bracket(bracket.rounds)
     return ids, seed_diffs
 

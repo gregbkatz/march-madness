@@ -1,5 +1,6 @@
 from scipy.special import erfinv, erf
 from random import uniform
+import pdb
 
 class Game:
     def __init__(self, data, favorite=False):
@@ -7,17 +8,32 @@ class Game:
         self.team1 = data['team1']
         self.round = data['round']
         self.favorite = favorite
+        self.p_win = self.calc_win_prob()
+        self.error = []
+        self.check_fit()
+
+    def check_fit(self):
+        # @TODO: This only makes sense for first round
+        # Should add code for actual fit check across Monte Carlo
+        diff = self.team0.rating - self.team1.rating
+        p_win538 = self.team0.rd_win[self.round - 1]
+
+        # nsigma = 2**0.5*erfinv(2*p_win538-1)
+        # sigma = diff/nsigma
+        error = self.p_win - p_win538 
+
+        self.error = error
 
     def calc_win_prob(self):
         diff = self.team0.rating - self.team1.rating
         return 0.5*(1+erf(diff/10/2**0.5))
 
     def resolve_game_result(self, sample):
-    # returns index of winning team
-    # sample must be between 0 and 1
-    # For monte carlo, sample should be uniformly distributed
-    # For favorite to win use 1
-    # For higher rated to win use 0.5
+        # returns index of winning team
+        # sample must be between 0 and 1
+        # For monte carlo, sample should be uniformly distributed
+        # For favorite to win use 1
+        # For higher rated to win use 0.5
         
         # Get final round truth values
         t1_frnd = self.team0.final_round
@@ -52,7 +68,6 @@ class Game:
             return 0
 
     def resolve(self):
-        self.p_win = self.calc_win_prob()
         sample = 0.5 if self.favorite else uniform(0,1)
         self.result = self.resolve_game_result(sample)
         if self.result:

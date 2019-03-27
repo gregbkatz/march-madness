@@ -1,3 +1,6 @@
+import pdb
+import numpy as np
+
 class Team:
     def __init__(self, data):
         self.playin_flag = data['playin_flag']
@@ -6,6 +9,11 @@ class Team:
         self.rating = data['team_rating']
         self.region = data['team_region']
         self.seed = data['team_seed']
+
+        self.rd_win = np.zeros((6))
+        for i in range(6):
+            self.rd_win[i] = data['rd' + str(i+2) + '_win']
+
         self.final_round = -1
 
     def print(self):
