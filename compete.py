@@ -4,6 +4,11 @@ from scipy.stats import rankdata
 import os
 from picks import Picks
 from forecast import Forecast
+import yahoo_parsing
+import glob
+
+def argsort(seq):
+    return sorted(range(len(seq)), key=seq.__getitem__)
 
 def probability_matrix(ranks):
     shp = np.shape(ranks)
@@ -37,6 +42,7 @@ def score_brackets(pick_ids, bracket_ids, bracket_seed_diffs, scoring_type):
     if scoring_type == 'family': 
         score_per_round = [10, 20, 40, 80, 120, 160]
         bonus_multiplier = [5, 10, 20, 30, 40, 50]
+        # bonus_multiplier = [0, 0, 0, 0, 0, 0]
     elif scoring_type == 'spacex':
         score_per_round = [1, 2, 4, 8, 16, 32]
         # bonus_multiplier = [1,1,2,2,3,3]
@@ -52,20 +58,23 @@ def score_brackets(pick_ids, bracket_ids, bracket_seed_diffs, scoring_type):
     bracket_seed_diffs[bracket_seed_diffs < 0] = 0
     bracket_seed_diffs = np.expand_dims(bracket_seed_diffs, axis=1)
     bonus = bracket_seed_diffs * check * bonus_multiplier_per_game
+
     score = np.sum(score, axis=2).squeeze()
     bonus = np.sum(bonus, axis=2).squeeze()
     total = score + bonus
     return total, score, bonus
-
 
 class Compete:
     def __init__(self, picks_dir, forecast_file, truth_file, scoring_type):
         self.forecast = Forecast(forecast_file, truth_file)
 
         self.all_picks = []
-        for file in os.listdir(picks_dir):
-            if file.endswith(".picks"):
-                self.all_picks.append(Picks(os.path.join(picks_dir, file)))
+        picks_files = glob.glob(picks_dir + '/*.picks')
+        if len(picks_files) > 0: 
+            for file in picks_files:
+                self.all_picks.append(Picks(file))
+        else:
+            self.all_picks = yahoo_parsing.run_yahoo_parsing(picks_dir)
 
         self.scoring_type = scoring_type
         self.Npicks = len(self.all_picks)
@@ -143,7 +152,8 @@ class Compete:
         print('{:30},{:10},{:10},{:10},{:10},{:10},{:10}'.format(
             'Bracket Name', 'min score', 'max score', 'P lose', 'P win', 'min rank', 'max rank'))
         # for i in mcc.curr_order:
-        for i in range(self.Npicks):
+        # for i in range(self.Npicks):
+        for i in argsort([x.name for x in self.all_picks]):
             print('{:30},{:10.0f},{:10.0f},{:10.1f},{:10.1f},{:10.0f},{:10.0f}'.format(
                 self.all_picks[i].name, self.min_scores[i], self.max_scores[i], self.plose[i]*100, self.pwin[i]*100, 
                 self.worst_finish[i], self.best_finish[i]))

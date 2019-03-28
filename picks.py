@@ -1,5 +1,4 @@
 import pdb
-import urllib.request
 import forecast
 import yahoo_parsing
 
@@ -23,16 +22,16 @@ def read_from_file(fname):
  
 
 class Picks:
-    def __init__(self, fname):
+    def __init__(self, fname, url=''):
         self.name = fname
-        teams = []
-        if fname[0:4] == 'http':
-            self.picks = yahoo_parsing.parse_bracket(fname)
+        if len(url) > 0:
+            self.picks = yahoo_parsing.parse_bracket(url)
+            self.write_to_file()
         else:   
             self.picks = read_from_file(fname)
    
-    def write_to_file(self, outname):
-        with open(outname, 'wt') as f:
+    def write_to_file(self):
+        with open(self.name, 'wt') as f:
             f.write('?\n')
             for rnd in self.picks:
                 f.write('-\n')    
@@ -45,4 +44,12 @@ class Picks:
             for pick in rd:
                 pick_ids.append(forecast.name_to_id(pick))
         return pick_ids
+
+    def __str__(self):
+        out = self.name + '\n'
+        for rd in self.picks:
+            out += '-------------------------\n'
+            for team in rd:
+                out += team + '\n'
+        return out
         

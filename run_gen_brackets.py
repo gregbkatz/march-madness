@@ -1,5 +1,0 @@
-import gen_brackets
-gen_brackets.write_brackets_to_pickle(100)
-gen_brackets.write_brackets_to_pickle(1000)
-gen_brackets.write_brackets_to_pickle(10000)
-gen_brackets.write_brackets_to_pickle(100000)
