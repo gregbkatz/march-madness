@@ -1,2 +1,6 @@
 .DS_STORE
 __pycache__
+brackets/
+*.p
+*_bak*
+search_picks/

@@ -71,7 +71,7 @@ class Forecast:
             self.add_truth(truth_file)
         self.hardcode_first_round() 
         self.find_first_games()
-        self.write_truth_file('base.truth')
+        self.write_truth_file('./truth/base.truth')
 
 
     def add_truth(self, truth_file):
