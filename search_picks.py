@@ -10,7 +10,7 @@ from scipy.stats import rankdata
 
 brackets_fname = "./search_picks/brackets.txt"
 
-def write_picks(picks):
+def summary(picks):
     forecast = Forecast('./forecast/fivethirtyeight_ncaa_forecasts.csv')
     n = 32
     i = 0

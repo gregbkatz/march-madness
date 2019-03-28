@@ -21,8 +21,8 @@ else:
     Nbrackets = 1000
 
 for i in range(n_iters):
-    picks = search_picks.search(brackets_forecast_file, scoring_type,
+    pick_ids = search_picks.search(brackets_forecast_file, scoring_type,
         Nbrackets = Nbrackets, Npicks = Npicks, 
         pick_ids_in=top_picks, picks_forecast_file=picks_forecast_file)
     if do_round2:
-        search_picks.write_picks(picks)
+        search_picks.summary(pick_ids)
