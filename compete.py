@@ -5,6 +5,22 @@ import os
 from picks import Picks
 from forecast import Forecast
 
+def get_pick_ids(picks_dir):
+    all_picks = []
+    picks_files = glob.glob(picks_dir + '/*.picks')
+    if len(picks_files) > 0: 
+        for file in picks_files:
+            all_picks.append(Picks(file))
+    else:
+        all_picks = yahoo_parsing.run_yahoo_parsing(picks_dir)
+
+    names = []
+    pick_ids = np.zeros((len(all_picks), 63), dtype='uint16')
+    for j, curr_picks in enumerate(all_picks):
+        pick_ids[j,:] = curr_picks.convert_to_id(forecast) 
+        names.append(curr_picks.name)
+    return pick_ids, names
+
 def argsort(seq):
     return sorted(range(len(seq)), key=seq.__getitem__)
 
@@ -141,6 +157,9 @@ class Compete:
                 self.pick_ids[i,:], self.bracket_ids, self.bracket_seed_diffs, self.scoring_type)
         return total, score, bonus
 
+    def sort_order(self):
+        return argsort(self.pick_names)
+
     def summary(self):
         self.do_calcs()
         print(self.forecast.forecast_file)
@@ -154,3 +173,40 @@ class Compete:
             print('{:30},{:10.0f},{:10.0f},{:10.1f},{:10.1f},{:10.0f},{:10.0f}'.format(
                 self.pick_names[i], self.min_scores[i], self.max_scores[i], self.plose[i]*100, self.pwin[i]*100, 
                 self.worst_finish[i], self.best_finish[i]))
+
+
+
+if __name__ == "__main__":
+    import random
+    random.seed(0)
+    import glob
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Find best picks')
+    parser.add_argument('--scoring_type', type=str, default='',
+                        help='family or spacex')
+    parser.add_argument('--forecast_file', type=str, 
+                        default='./forecast/fivethirtyeight_ncaa_forecasts.csv',
+                        help='truth_file file for bracket simulations')
+    parser.add_argument('--truth_file', type=str, 
+                        default='',
+                        help='forecast file for generating picks')
+
+    parser.add_argument('--Nbrackets', type=int, default=1000,
+                        help='number of brackets to generate')
+
+    parser.add_argument('--picks_dir', type=str, default='spacex',
+                        help='family or spacex')
+    args = parser.parse_args()
+
+    if len(args.scoring_type) == 0:
+        scoring_type = args.picks_dir
+    else:
+        scoring_type = args.scoring_type
+
+    forecast = Forecast(args.forecast_file, args.truth_file)
+    pick_ids, names = get_pick_ids(args.picks_dir)
+
+    mcc = Compete(pick_ids, forecast, scoring_type, names)
+    mcc.run_MC(args.Nbrackets)
+    mcc.summary()

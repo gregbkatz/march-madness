@@ -148,7 +148,11 @@ class Forecast:
             return int(self.idmap[name])
         else:
             print('"{}" not found in forecast bracket'.format(name)) 
-            raise("Error")
+            z = [x for x in self.idmap]
+            z.sort()
+            print(z)
+            pdb.set_trace()
+            # raise("Error")
 
     def write_truth_file(self, outfile):
         with open(outfile, 'wt') as fo:

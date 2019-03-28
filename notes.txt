@@ -2,3 +2,4 @@
 2. Check region ordering in sort_first_games() forecast.py
 3. Check region ordering in yahoo_sort_teams() in picks.py
 4. Hardcode group_id in run_yahoo_parsing in yahoo_parsing.py
+5. Hardcode scoring in score_brackets in compete.py
