@@ -1,29 +1,28 @@
 import search_picks
-import gen_brackets
+from forecast import Forecast
+import numpy as np
+import pdb
 
+scoring_type = 'family'
 do_round2 = True
+brackets_forecast_file = './forecast/fivethirtyeight_ncaa_forecasts.csv'
 if do_round2:
-    pickle_filename = 'mc_brackets_10000.p'
     top_picks = search_picks.read_top_picks()
-    fname = 'fivethirtyeight_ncaa_forecasts.csv'
+    picks_forecast_file = './forecast/fivethirtyeight_ncaa_forecasts.csv'
     n_iters = 1
-    Npicks = 10000
+    Npicks = 5000
+    Nbrackets = 10000
 else: 
-    pickle_filename = 'mc_brackets_1000.p'
     top_picks = np.zeros((0,63))
-    fname = '5050.csv'
+    picks_forecast_file = './forecast/fivethirtyeight_ncaa_forecasts.csv'
+    # picks_forecast_file = './forecast/5050.csv'
     n_iters = 1000
-    Npicks = 500000
-
-with open(pickle_filename, 'rb') as fp:
-    brackets = pickle.load(fp)
-Nbrackets = brackets['ids'].shape[0]
-
-use_bonus = True
-baseline, _ = gen_brackets.baseline()
-baseline_score = search_picks.score_brackets(baseline, brackets, use_bonus)
+    Npicks = 50000
+    Nbrackets = 1000
 
 for i in range(n_iters):
-    picks = search_picks.search(Npicks = Npicks, picks_in=top_picks, fname=fname)
+    picks = search_picks.search(brackets_forecast_file, scoring_type,
+        Nbrackets = Nbrackets, Npicks = Npicks, 
+        pick_ids_in=top_picks, picks_forecast_file=picks_forecast_file)
     if do_round2:
         search_picks.write_picks(picks)

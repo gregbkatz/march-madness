@@ -165,9 +165,9 @@ class Forecast:
         truth_file = fname_from_fullpath(self.truth_file)
         return "./brackets/{}_{}_{}.p".format(forecast_file, truth_file, N)
 
-    def gen_brackets(self, N, verbose=False):
+    def gen_brackets(self, N, use_pickle=True, verbose=False):
         fname = self.get_pickle_fname(N)
-        if os.path.isfile(fname):
+        if os.path.isfile(fname) and use_pickle:
             print('Found existing pickle')
             return load_pickle(fname)
 
@@ -178,7 +178,9 @@ class Forecast:
             if verbose and i % 1000 == 0:
                 print(i)
             ids[i,:], seed_diffs[i,:] = Bracket(self.first_games).convert()
-        write_pickle(fname, ids, seed_diffs)
+            
+        if use_pickle:
+            write_pickle(fname, ids, seed_diffs)
         print('Bracket generation complete.')
         return ids, seed_diffs
 

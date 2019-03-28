@@ -4,8 +4,6 @@ from scipy.stats import rankdata
 import os
 from picks import Picks
 from forecast import Forecast
-import yahoo_parsing
-import glob
 
 def argsort(seq):
     return sorted(range(len(seq)), key=seq.__getitem__)
@@ -65,29 +63,27 @@ def score_brackets(pick_ids, bracket_ids, bracket_seed_diffs, scoring_type):
     return total, score, bonus
 
 class Compete:
-    def __init__(self, picks_dir, forecast_file, truth_file, scoring_type):
-        self.forecast = Forecast(forecast_file, truth_file)
-
-        self.all_picks = []
-        picks_files = glob.glob(picks_dir + '/*.picks')
-        if len(picks_files) > 0: 
-            for file in picks_files:
-                self.all_picks.append(Picks(file))
-        else:
-            self.all_picks = yahoo_parsing.run_yahoo_parsing(picks_dir)
-
+    def __init__(self, pick_ids, forecast, scoring_type, pick_names=[]):
+        self.forecast = forecast
+        self.pick_ids = pick_ids
         self.scoring_type = scoring_type
-        self.Npicks = len(self.all_picks)
- 
-        self.pick_ids = np.zeros((self.Npicks, 63), dtype='uint16')
-        for j, curr_picks in enumerate(self.all_picks):
-            self.pick_ids[j,:] = curr_picks.convert_to_id(self.forecast) 
+        self.pick_names = pick_names
 
-    def run_MC(self, Nbrackets, verbose=True):
+
+        self.Npicks = self.pick_ids.shape[0]
+        if len(self.pick_names) == 0:
+            self.pick_names = [x for x in range(self.Npicks)]
+
+        assert(len(self.pick_names) == self.Npicks)
+
+    def run_MC(self, Nbrackets):
         self.Nbrackets = Nbrackets
         self.bracket_ids, self.bracket_seed_diffs = self.forecast.gen_brackets(Nbrackets)
-        scores, no_bonus, bonus = self.score_all_picks()
-                  
+        self.scores, self.no_bonus, self.bonus = self.score_all_picks()
+
+    def do_calcs(self):
+        scores, no_bonus, bonus = self.scores, self.no_bonus, self.bonus
+        
         ranks = np.zeros((self.Nbrackets, self.Npicks))
         ranks2 = np.zeros((self.Nbrackets, self.Npicks))     
         for i in range(scores.shape[0]):
@@ -146,14 +142,15 @@ class Compete:
         return total, score, bonus
 
     def summary(self):
+        self.do_calcs()
         print(self.forecast.forecast_file)
         print(self.forecast.truth_file)
         print(self.Nbrackets)
         print('{:30},{:10},{:10},{:10},{:10},{:10},{:10}'.format(
             'Bracket Name', 'min score', 'max score', 'P lose', 'P win', 'min rank', 'max rank'))
-        # for i in mcc.curr_order:
+        # for i in self.curr_order:
         # for i in range(self.Npicks):
-        for i in argsort([x.name for x in self.all_picks]):
+        for i in argsort(self.pick_names):
             print('{:30},{:10.0f},{:10.0f},{:10.1f},{:10.1f},{:10.0f},{:10.0f}'.format(
-                self.all_picks[i].name, self.min_scores[i], self.max_scores[i], self.plose[i]*100, self.pwin[i]*100, 
+                self.pick_names[i], self.min_scores[i], self.max_scores[i], self.plose[i]*100, self.pwin[i]*100, 
                 self.worst_finish[i], self.best_finish[i]))
