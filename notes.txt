@@ -12,3 +12,13 @@ What to run
  * Run search_picks.py to make picks
  * Run compete.py to score a specific truth scenario file
  * Run scenarios.py to run a batch of scenarios
+
+
+ToDo
+ * When creating scenario.truth files give them more unique names so the brackets are regenerated rather than loading from cache
+ * Something is funky with output of scenarios.py
+ * Keep cleaning up scenarios.py
+ * Make plots of history in scenarios
+ * More data mining for getting scenarios without running specific truth files
+ * Visualization of picks and scenarios
+ * Ultimate goal: gui for outcomes with turning on/off truth scenarios like 538
