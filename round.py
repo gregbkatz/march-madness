@@ -39,3 +39,10 @@ class Round:
             else:
                 out += '  {:12} {}\n'.format(item[0], item[1])
         return out
+
+    def find_game(self, team_id):
+        for game in self.games:
+            team_ids = [t.id for t in game.teams]
+            if team_id in team_ids:
+                return game
+        return None

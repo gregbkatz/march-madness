@@ -1,5 +1,14 @@
-1. Hardcode first round playin winners in forecast.py
-2. Check region ordering in sort_first_games() forecast.py
-3. Check region ordering in yahoo_sort_teams() in picks.py
-4. Hardcode group_id in run_yahoo_parsing in yahoo_parsing.py
-5. Hardcode scoring in score_brackets in compete.py
+Things to check or change
+ * Hardcode first round playin winners in forecast.py
+ * Check region ordering in sort_first_games() forecast.py
+ * Check region ordering in yahoo_sort_teams() in picks.py
+ * Hardcode group_id in run_yahoo_parsing in yahoo_parsing.py
+ * Hardcode scoring in score_brackets in compete.py
+ * Add to synonyms.py as necessary to match up between yahoo team names and 538 forecast team names. 
+ * Make a "50/50" forecast by changing the rating column to all 1 in 538 forecast csv
+
+
+What to run
+ * Run search_picks.py to make picks
+ * Run compete.py to score a specific truth scenario file
+ * Run scenarios.py to run a batch of scenarios

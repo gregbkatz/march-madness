@@ -73,6 +73,13 @@ class Forecast:
         self.find_first_games()
         self.write_truth_file('./truth/base.truth')
 
+    def get_bracket(self):
+        return Bracket(self.first_games)        
+
+    def find_game(self, i_rnd, team_id):
+        bracket = self.get_bracket()
+        rnd = bracket.rounds[i_rnd-1]
+        return rnd.find_game(team_id)
 
     def add_truth(self, truth_file):
         # Expects csv with a header row and then
@@ -80,6 +87,8 @@ class Forecast:
         with open(truth_file, 'r') as f:
             reader = csv.reader(f, delimiter=',')
             header = reader.__next__()
+            while header[0][0] == '#':
+                header = reader.__next__()
             for row in reader:
                 name, final_round = row[0], int(row[1])
                 curr_id = self.name_to_id(name)
@@ -154,15 +163,16 @@ class Forecast:
             pdb.set_trace()
             # raise("Error")
 
-    def write_truth_file(self, outfile):
+    def write_truth_file(self, outfile, title=''):
         with open(outfile, 'wt') as fo:
+            fo.write('# ' + title + '\n')
             fo.write('Name, Final Round\n')
             for game in self.first_games.games:
                 game.teams[0].write_to_truth_file(fo)
                 game.teams[1].write_to_truth_file(fo)
 
-    def baseline(self):
-        return Bracket(self.first_games).convert()
+    # def baseline(self):
+        # return Bracket(self.first_games).convert()
 
     def get_pickle_fname(self, N):
         forecast_file = fname_from_fullpath(self.forecast_file)
@@ -181,7 +191,7 @@ class Forecast:
         for i in range(N):
             if verbose and i % 1000 == 0:
                 print(i)
-            ids[i,:], seed_diffs[i,:] = Bracket(self.first_games).convert()
+            ids[i,:], seed_diffs[i,:] = self.get_bracket().convert()
             
         if use_pickle:
             write_pickle(fname, ids, seed_diffs)

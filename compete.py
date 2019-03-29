@@ -4,8 +4,9 @@ from scipy.stats import rankdata
 import os
 from picks import Picks
 from forecast import Forecast
+import glob
 
-def get_pick_ids(picks_dir):
+def get_pick_ids(picks_dir, forecast):
     all_picks = []
     picks_files = glob.glob(picks_dir + '/*.picks')
     if len(picks_files) > 0: 
@@ -179,7 +180,6 @@ class Compete:
 if __name__ == "__main__":
     import random
     random.seed(0)
-    import glob
     import argparse
 
     parser = argparse.ArgumentParser(description='Find best picks')
@@ -192,12 +192,15 @@ if __name__ == "__main__":
                         default='',
                         help='forecast file for generating picks')
 
-    parser.add_argument('--Nbrackets', type=int, default=1000,
+    parser.add_argument('--Nbrackets', type=int, default=10000,
                         help='number of brackets to generate')
 
     parser.add_argument('--picks_dir', type=str, default='spacex',
                         help='family or spacex')
     args = parser.parse_args()
+
+# python compete.py --truth_file truth/history/round3_game02.truth --picks_dir family 
+
 
     if len(args.scoring_type) == 0:
         scoring_type = args.picks_dir
@@ -205,7 +208,7 @@ if __name__ == "__main__":
         scoring_type = args.scoring_type
 
     forecast = Forecast(args.forecast_file, args.truth_file)
-    pick_ids, names = get_pick_ids(args.picks_dir)
+    pick_ids, names = get_pick_ids(args.picks_dir, forecast)
 
     mcc = Compete(pick_ids, forecast, scoring_type, names)
     mcc.run_MC(args.Nbrackets)
