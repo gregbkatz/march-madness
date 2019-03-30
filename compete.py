@@ -56,12 +56,14 @@ def score_brackets(pick_ids, bracket_ids, bracket_seed_diffs, scoring_type):
    
     if scoring_type == 'family': 
         score_per_round = [10, 20, 40, 80, 120, 160]
+        # score_per_round = [10, 20, 40, 80, 160, 320]
         bonus_multiplier = [5, 10, 20, 30, 40, 50]
         # bonus_multiplier = [0, 0, 0, 0, 0, 0]
     elif scoring_type == 'spacex':
         score_per_round = [1, 2, 4, 8, 16, 32]
         # bonus_multiplier = [1,1,2,2,3,3]
         bonus_multiplier = [1,1,3,4,5,6]
+        # bonus_multiplier = [0, 0, 0, 0, 0, 0]
     else:
         print('scoring type not recognized')
         pdb.set_trace()
@@ -213,3 +215,4 @@ if __name__ == "__main__":
     mcc = Compete(pick_ids, forecast, scoring_type, names)
     mcc.run_MC(args.Nbrackets)
     mcc.summary()
+    # pdb.set_trace()

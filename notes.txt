@@ -22,3 +22,4 @@ ToDo
  * More data mining for getting scenarios without running specific truth files
  * Visualization of picks and scenarios
  * Ultimate goal: gui for outcomes with turning on/off truth scenarios like 538
+ * Convert ids to bracket? 
