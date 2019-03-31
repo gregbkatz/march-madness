@@ -1,6 +1,6 @@
 import numpy as np
 import pdb
-from scipy.stats import rankdata 
+from scipy.stats import rankdata
 import os
 from picks import Picks
 from forecast import Forecast
@@ -9,7 +9,7 @@ import glob
 def get_pick_ids(picks_dir, forecast):
     all_picks = []
     picks_files = glob.glob(picks_dir + '/*.picks')
-    if len(picks_files) > 0: 
+    if len(picks_files) > 0:
         for file in picks_files:
             all_picks.append(Picks(file))
     else:
@@ -18,7 +18,7 @@ def get_pick_ids(picks_dir, forecast):
     names = []
     pick_ids = np.zeros((len(all_picks), 63), dtype='uint16')
     for j, curr_picks in enumerate(all_picks):
-        pick_ids[j,:] = curr_picks.convert_to_id(forecast) 
+        pick_ids[j,:] = curr_picks.convert_to_id(forecast)
         names.append(curr_picks.name)
     return pick_ids, names
 
@@ -53,8 +53,8 @@ def score_brackets(pick_ids, bracket_ids, bracket_seed_diffs, scoring_type):
     pick_ids = np.expand_dims(pick_ids, axis=0)
     bracket_ids = np.expand_dims(bracket_ids, axis=1)
     check = pick_ids == bracket_ids
-   
-    if scoring_type == 'family': 
+
+    if scoring_type == 'family':
         score_per_round = [10, 20, 40, 80, 120, 160]
         # score_per_round = [10, 20, 40, 80, 160, 320]
         bonus_multiplier = [5, 10, 20, 30, 40, 50]
@@ -102,9 +102,9 @@ class Compete:
 
     def do_calcs(self):
         scores, no_bonus, bonus = self.scores, self.no_bonus, self.bonus
-        
+
         ranks = np.zeros((self.Nbrackets, self.Npicks))
-        ranks2 = np.zeros((self.Nbrackets, self.Npicks))     
+        ranks2 = np.zeros((self.Nbrackets, self.Npicks))
         for i in range(scores.shape[0]):
             ranks[i,:]  = self.Npicks + 1 - rankdata(scores[i,:], 'max')
             ranks2[i,:] = self.Npicks + 1 - rankdata(scores[i,:], 'min')
@@ -118,7 +118,7 @@ class Compete:
         max_scores = np.max(scores, axis=0)
         max_no_bonus = np.max(no_bonus, axis=0)
         max_bonus = np.max(bonus, axis=0)
-        pwin = pmat[:,0]      
+        pwin = pmat[:,0]
         pmat2 = probability_matrix(ranks2)
         plose = pmat2[:,-1]
         best_finish = np.min(ranks, axis=0)
@@ -129,10 +129,10 @@ class Compete:
         median_finish = np.median(ranks, axis=0)
         print('Finish Calcs')
 
-        self.scores = scores 
+        self.scores = scores
         self.no_bonus = no_bonus
         self.bonus = bonus
-        self.ranks = ranks 
+        self.ranks = ranks
         self.medians = medians
         self.pmat = pmat
         self.min_scores = min_scores
@@ -174,7 +174,7 @@ class Compete:
         # for i in range(self.Npicks):
         for i in argsort(self.pick_names):
             print('{:30},{:10.0f},{:10.0f},{:10.1f},{:10.1f},{:10.0f},{:10.0f}'.format(
-                self.pick_names[i], self.min_scores[i], self.max_scores[i], self.plose[i]*100, self.pwin[i]*100, 
+                self.pick_names[i], self.min_scores[i], self.max_scores[i], self.plose[i]*100, self.pwin[i]*100,
                 self.worst_finish[i], self.best_finish[i]))
 
 
@@ -187,10 +187,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Find best picks')
     parser.add_argument('--scoring_type', type=str, default='',
                         help='family or spacex')
-    parser.add_argument('--forecast_file', type=str, 
+    parser.add_argument('--forecast_file', type=str,
                         default='./forecast/fivethirtyeight_ncaa_forecasts.csv',
                         help='truth_file file for bracket simulations')
-    parser.add_argument('--truth_file', type=str, 
+    parser.add_argument('--truth_file', type=str,
                         default='',
                         help='forecast file for generating picks')
 
@@ -201,7 +201,7 @@ if __name__ == "__main__":
                         help='family or spacex')
     args = parser.parse_args()
 
-# python compete.py --truth_file truth/history/round3_game02.truth --picks_dir family 
+# python compete.py --truth_file truth/history/round3_game02.truth --picks_dir family
 
 
     if len(args.scoring_type) == 0:
