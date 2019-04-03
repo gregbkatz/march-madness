@@ -1,4 +1,4 @@
-# Round 4 Game 04: Michigan State defeats Duke
+# ./truth/final4.truth
 Name, Final Round
 Duke,4
 North Dakota State,1
@@ -26,7 +26,7 @@ Florida State,3
 Vermont,1
 Buffalo,2
 Arizona State,1
-Texas Tech,5
+Texas Tech,-1
 Northern Kentucky,1
 Nevada,1
 Florida,2

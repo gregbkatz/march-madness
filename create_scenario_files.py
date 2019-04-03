@@ -65,6 +65,7 @@ if __name__ == "__main__":
 
 # python create_scenario_files.py --truth_file ./truth/rd2.truth --out_dir ./truth/scenarios/rnd3 --round 3
 # python create_scenario_files.py --truth_file ./truth/history/round3_game04.truth --out_dir ./truth/scenarios/rnd3_3 --round 3
+# python create_scenario_files.py --truth_file ./truth/final4.truth --out_dir ./truth/scenarios/rnd5 --round 5
 
     forecast = Forecast(args.forecast_file, args.truth_file)
     create_scenario_files(args.round, args.out_dir, forecast)
